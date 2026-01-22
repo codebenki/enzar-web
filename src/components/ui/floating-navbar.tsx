@@ -115,7 +115,7 @@ export const FloatingNav = ({
             <button className="relative group shrink-0">
               <div className="absolute inset-0 bg-red-600 rounded-full blur-md opacity-20 group-hover:opacity-50 transition-opacity" />
               <div className="relative bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-full text-xs font-bold transition-all active:scale-95">
-                Let&apos;s Talk
+                <Link href={"/en/contact"}>Let&apos;s Talk</Link>
               </div>
             </button>
 

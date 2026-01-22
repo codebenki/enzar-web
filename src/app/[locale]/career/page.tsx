@@ -133,7 +133,7 @@ export default function Career() {
           <div className="space-y-4">
             {jobs.map((job, idx) => (
               <FloatIn key={idx} direction="up" delay={idx * 0.1}>
-                <div className="group bg-[#0a0a0a] border border-white/5 p-6 md:p-8 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-white/[0.02] transition-all">
+                <div className="group bg-[#0a0a0a] border border-white/5 p-6 md:p-8 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-white/2 transition-all">
                   <div className="space-y-4">
                     <div className="flex flex-wrap items-center gap-4 text-[10px] uppercase tracking-widest font-bold">
                       <span className="flex items-center gap-1.5 text-neutral-400">
