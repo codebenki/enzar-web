@@ -14,6 +14,7 @@ export default async function LocaleLayout({
     { name: "About", link: "/en/about" },
     { name: "Services", link: "/en/services" },
     { name: "Culture", link: "/en/culture" },
+    { name: "Media", link: "/en/media" },
   ];
 
   return (
