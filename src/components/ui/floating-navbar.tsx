@@ -1,12 +1,15 @@
 "use client";
-import React, { JSX, useState } from "react";
+import { JSX, useState } from "react";
 import {
   motion,
   AnimatePresence,
   useScroll,
   useMotionValueEvent,
-} from "motion/react";
+} from "framer-motion";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { usePathname } from "next/navigation"; // Hook to detect current route
+import { Menu, X } from "lucide-react";
 
 export const FloatingNav = ({
   navItems,
@@ -19,22 +22,21 @@ export const FloatingNav = ({
   }[];
   className?: string;
 }) => {
+  const pathname = usePathname(); // Get current path
   const { scrollYProgress } = useScroll();
 
   const [visible, setVisible] = useState(true);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     if (typeof current === "number") {
       let previous = scrollYProgress.getPrevious();
-      // Fallback for first scroll
       let direction = current - (previous ?? 0);
 
-      // If we are at the very top (less than 1% scrolled), keep it visible
-      if (current < 0.01) {
+      if (current < 0.05) {
         setVisible(true);
       } else {
-        // Scroll down -> hide | Scroll up -> show
-        if (direction < 0) {
+        if (direction < 0 || mobileMenuOpen) {
           setVisible(true);
         } else {
           setVisible(false);
@@ -46,38 +48,120 @@ export const FloatingNav = ({
   return (
     <AnimatePresence mode="wait">
       <motion.div
-        initial={{
-          opacity: 1,
-          y: -100,
-        }}
+        initial={{ opacity: 1, y: -100 }}
         animate={{
           y: visible ? 0 : -100,
           opacity: visible ? 1 : 0,
         }}
-        transition={{
-          duration: 0.2,
-        }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
         className={cn(
-          "flex max-w-fit  fixed top-10 inset-x-0 mx-auto border border-transparent dark:border-white/20 rounded-full dark:bg-black bg-white shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-1000 pr-2 pl-8 py-2  items-center justify-center space-x-4",
+          "flex flex-col w-[95%] lg:max-w-fit fixed top-6 inset-x-0 mx-auto border border-white/10 rounded-4xl lg:rounded-full bg-black/80 backdrop-blur-md z-5000 shadow-2xl overflow-hidden",
           className,
         )}
       >
-        {navItems.map((navItem: any, idx: number) => (
-          <a
-            key={`link=${idx}`}
-            href={navItem.link}
-            className={cn(
-              "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500",
-            )}
-          >
-            <span className="block sm:hidden">{navItem.icon}</span>
-            <span className="hidden sm:block text-sm">{navItem.name}</span>
-          </a>
-        ))}
-        {/* <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
-          <span>Login</span>
-          <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
-        </button> */}
+        <div className="flex w-full items-center justify-between px-6 lg:px-8 py-3">
+          {/* LEFT: Logo Area */}
+          <Link href="/" className="flex items-center shrink-0">
+            <div className="flex flex-col items-start">
+              <span className="text-white font-bold tracking-[0.2em] text-lg">
+                ENZAR
+              </span>
+              <span className="text-[8px] tracking-[0.4em] text-neutral-500 -mt-1 uppercase">
+                Digital
+              </span>
+            </div>
+          </Link>
+
+          {/* CENTER: Desktop Links with Active State logic */}
+          <nav className="hidden lg:flex items-center space-x-8 px-8">
+            {navItems.map((navItem, idx) => {
+              const isActive =
+                pathname === navItem.link ||
+                pathname === `/en${navItem.link}` ||
+                pathname === `/ar${navItem.link}` ||
+                (navItem.link === "/" &&
+                  (pathname === "/en" || pathname === "/ar"));
+
+              return (
+                <Link
+                  key={`link=${idx}`}
+                  href={navItem.link}
+                  className={cn(
+                    "relative text-sm font-medium transition-colors group py-1",
+                    isActive
+                      ? "text-white"
+                      : "text-neutral-400 hover:text-white",
+                  )}
+                >
+                  <span>{navItem.name}</span>
+                  {/* Underline for active and hover states */}
+                  <span
+                    className={cn(
+                      "absolute -bottom-1 left-0 h-px bg-red-600 transition-all duration-300",
+                      isActive ? "w-full" : "w-0 group-hover:w-full",
+                    )}
+                  />
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* RIGHT: Actions */}
+          <div className="flex items-center space-x-3">
+            <button className="hidden sm:flex h-9 w-9 rounded-full border border-white/10 items-center justify-center text-[10px] font-bold text-white hover:bg-white/5 transition-all">
+              AR
+            </button>
+
+            <button className="relative group shrink-0">
+              <div className="absolute inset-0 bg-red-600 rounded-full blur-md opacity-20 group-hover:opacity-50 transition-opacity" />
+              <div className="relative bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-full text-xs font-bold transition-all active:scale-95">
+                Let&apos;s Talk
+              </div>
+            </button>
+
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden p-2 text-white hover:bg-white/5 rounded-full transition-colors"
+            >
+              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
+        </div>
+
+        {/* MOBILE COLLAPSIBLE CONTENT */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "circOut" }}
+              className="lg:hidden border-t border-white/5 bg-black/40"
+            >
+              <div className="flex flex-col p-6 space-y-4">
+                {navItems.map((navItem, idx) => {
+                  const isActive = pathname === navItem.link;
+
+                  return (
+                    <Link
+                      key={`mobile-link=${idx}`}
+                      href={navItem.link}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={cn(
+                        "text-lg font-medium py-2 transition-colors border-b border-white/5 last:border-0",
+                        isActive
+                          ? "text-red-500"
+                          : "text-neutral-400 hover:text-white",
+                      )}
+                    >
+                      {navItem.name}
+                    </Link>
+                  );
+                })}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
     </AnimatePresence>
   );

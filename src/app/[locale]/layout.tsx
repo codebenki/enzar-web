@@ -11,7 +11,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
   const navItems = [
     { name: "Home", link: "/" },
-    { name: "About", link: "/about" },
+    { name: "About", link: "/en/about" },
   ];
 
   return (
