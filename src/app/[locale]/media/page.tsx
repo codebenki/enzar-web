@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { ArrowUpRight, Calendar, Clock } from "lucide-react";
 import Link from "next/link";
 import { FloatIn } from "@/components/FloatIn";
+import Footer from "@/components/Footer";
 
 const newsItems = [
   {
@@ -187,6 +188,7 @@ export default function Media() {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 }

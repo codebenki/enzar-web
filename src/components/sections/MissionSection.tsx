@@ -78,7 +78,7 @@ export default function MissionSection() {
                       >
                         <span
                           className={cn(
-                            "flex-shrink-0 h-5 w-5 rounded-full flex items-center justify-center text-[10px]",
+                            "shrink-0 h-5 w-5 rounded-full flex items-center justify-center text-[10px]",
                             card.iconBg,
                           )}
                         >

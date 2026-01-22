@@ -128,7 +128,7 @@ export default function SolutionsSection() {
                           key={fIdx}
                           className="flex items-center gap-3 text-neutral-200"
                         >
-                          <span className="h-1.5 w-1.5 rounded-full bg-neutral-600 flex-shrink-0" />
+                          <span className="h-1.5 w-1.5 rounded-full bg-neutral-600 shrink-0" />
                           <span className="text-sm">{feature}</span>
                         </li>
                       ))}

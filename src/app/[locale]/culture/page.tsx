@@ -105,7 +105,7 @@ export default function Culture() {
             {/* VALUES GRID */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-32">
               {values.map((item, idx) => (
-                <FloatIn>
+                <FloatIn key={idx}>
                   <div
                     key={idx}
                     className="bg-[#0a0a0a] border border-white/5 rounded-2xl p-8 hover:border-red-600/30 transition-all duration-300 group"
