@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { Heart, Users2, Lightbulb, Target, Award, Globe } from "lucide-react";
 import { FloatIn } from "@/components/FloatIn";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 const stats = [
   { label: "Team Members", value: "150+" },
@@ -167,7 +168,7 @@ export default function Culture() {
                   <button className="relative group overflow-hidden">
                     <div className="absolute inset-0 bg-red-600 rounded-full blur-md opacity-20 group-hover:opacity-40 transition-opacity" />
                     <div className="relative bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-bold transition-all active:scale-95">
-                      Explore Careers
+                      <Link href={"/en/career"}>Explore Careers</Link>
                     </div>
                   </button>
                 </div>
