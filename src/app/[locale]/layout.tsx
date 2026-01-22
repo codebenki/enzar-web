@@ -9,11 +9,15 @@ export default async function LocaleLayout({
 }) {
   // Use await to get the actual locale string
   const { locale } = await params;
-  const navItems = [{ name: "Home", link: "/" }];
+  const navItems = [
+    { name: "Home", link: "/" },
+    { name: "About", link: "/about" },
+  ];
 
   return (
-    <div dir={locale === "ar" ? "rtl" : "ltr"}>
-      <FloatingNav navItems={navItems} />
+    <div dir={locale === "ar" ? "rtl" : "ltr"} className="bg-black text-white">
+      {/* <SplashScreen /> */}
+      <FloatingNav navItems={navItems} className="" />
       {children}
     </div>
   );
