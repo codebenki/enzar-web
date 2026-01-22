@@ -13,6 +13,7 @@ export default async function LocaleLayout({
     { name: "Home", link: "/" },
     { name: "About", link: "/en/about" },
     { name: "Services", link: "/en/services" },
+    { name: "Culture", link: "/en/culture" },
   ];
 
   return (
