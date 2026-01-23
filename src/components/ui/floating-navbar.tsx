@@ -8,8 +8,10 @@ import {
 } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { usePathname } from "next/navigation"; // Hook to detect current route
+import { useParams } from "next/navigation"; // Hook to detect current route
 import { Menu, X } from "lucide-react";
+import { useRouter, usePathname } from "@/i18n/routing";
+import { useLocale } from "next-intl";
 
 export const FloatingNav = ({
   navItems,
@@ -45,6 +47,15 @@ export const FloatingNav = ({
     }
   });
 
+  const router = useRouter();
+  const locale = useLocale();
+  const params = useParams();
+
+  const toggleLocale = () => {
+    const nextLocale = locale === "en" ? "ar" : "en";
+    router.replace(pathname, { locale: nextLocale });
+  };
+
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -71,7 +82,6 @@ export const FloatingNav = ({
               </span>
             </div>
           </Link>
-
           {/* CENTER: Desktop Links with Active State logic */}
           <nav className="hidden lg:flex items-center space-x-8 px-8">
             {navItems.map((navItem, idx) => {
@@ -105,11 +115,13 @@ export const FloatingNav = ({
               );
             })}
           </nav>
-
-          {/* RIGHT: Actions */}
+          ;{/* RIGHT: Actions */}
           <div className="flex items-center space-x-3">
-            <button className="hidden sm:flex h-9 w-9 rounded-full border border-white/10 items-center justify-center text-[10px] font-bold text-white hover:bg-white/5 transition-all">
-              AR
+            <button
+              onClick={toggleLocale}
+              className="hidden sm:flex h-9 w-9 rounded-full border border-white/10 items-center justify-center text-[10px] font-bold text-white hover:bg-white/5 transition-all"
+            >
+              {locale === "en" ? "AR" : "EN"}
             </button>
 
             <button className="relative group shrink-0">

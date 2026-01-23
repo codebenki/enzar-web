@@ -2,34 +2,27 @@
 import { WobbleCard } from "../ui/wobble-card";
 import { FloatIn } from "../FloatIn";
 import { cn } from "@/lib/utils";
+import { Landmark, Laptop } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function MissionSection() {
+  const t = useTranslations("Mission");
   const cardData = [
     {
-      title: "ENZAR Company - Heritage & Expertise",
-      subtitle: "Established in 2002",
-      icon: "🏛️",
+      title: t("title1"),
+      subtitle: t("subtitle1"),
+      icon: <Landmark size={20} color="white" />,
       iconBg: "bg-[#6e020e] border border-2xl border-red-600",
-      points: [
-        "Over 20 years of integrated security expertise",
-        "Successor to German company IBCOL (1987–2010)",
-        "Saudi Aramco & Public Security approved",
-        "Leading general contractor & systems integrator",
-      ],
-      containerClass: "bg-[#2e070b] hover:bg-[#57060f]", // Dark brownish tint from image
+      points: [t("points1.1"), t("points1.2"), t("points1.3"), t("points1.4")],
+      containerClass: "bg-[#2e070b] hover:bg-[#57060f]",
     },
     {
-      title: "Enzar Digital - Technology Powerhouse",
-      subtitle: "Digital Excellence Center",
-      icon: "💻",
+      title: t("title2"),
+      subtitle: t("subtitle2"),
+      icon: <Laptop size={20} color="white" />,
       iconBg: "bg-[#6e020e] border border-2xl border-red-600",
-      points: [
-        "Top-tier Software Engineers & AI Specialists",
-        "Cloud Architects & Full-Stack Developers",
-        "Culture rooted in innovation and collaboration",
-        "Modern, secure, future-ready digital solutions",
-      ],
-      containerClass: "bg-[#2e070b] hover:bg-[#57060f]", // Dark reddish tint from image
+      points: [t("points2.1"), t("points2.2"), t("points2.3"), t("points2.4")],
+      containerClass: "bg-[#2e070b] hover:bg-[#57060f]",
     },
   ];
 
@@ -37,8 +30,8 @@ export default function MissionSection() {
     <section className="bg-black py-20 px-6">
       <div className="max-w-7xl mx-auto space-y-8">
         <FloatIn>
-          <div className="text-center text-5xl font-bold p-4 mb-18">
-            We are <p className="text-red-600">Enzar Digital</p>
+          <div className="text-center text-5xl font-bold p-4 mb-18 text-white">
+            {t("header.1")} <p className="text-red-600">{t("header.2")}</p>
           </div>
         </FloatIn>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -97,12 +90,12 @@ export default function MissionSection() {
         <FloatIn direction="up" delay={0.2}>
           <div className="rounded-[30px] bg-[#2e070b] border border-white/5 p-10 md:p-16 text-center space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-900/30 border border-red-500/20 text-red-400 text-sm font-medium">
-              <span>🚀</span> Our Mission
+              <span>🚀</span> {t("description.1")}
             </div>
             <h2 className="text-white text-xl md:text-3xl font-semibold leading-relaxed max-w-4xl mx-auto">
-              Enzar Digital is more than a team—it is a center of excellence
-              driving innovation across ENZAR&apos;s digital ecosystem, backed
-              by over two decades of security and operational expertise.
+              {t("description.2")}
+              {t("description.3")}
+              {t("description.4")}
             </h2>
           </div>
         </FloatIn>

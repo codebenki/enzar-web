@@ -4,22 +4,37 @@ import { useEffect, useState } from "react";
 import { useUIStore } from "@/store/useUIStore";
 import Image from "next/image";
 import { FloatIn } from "./FloatIn";
+import { useTranslations } from "next-intl";
 
 export default function SplashScreen() {
+  const t = useTranslations("Banner");
   const { isLoaded, setLoaded } = useUIStore();
-  const [showBanner, setShowBanner] = useState(isLoaded);
+  const [mounted, setMounted] = useState(false);
+  const [showBanner, setShowBanner] = useState(false);
 
+  // 1. Ensure component is mounted on the client before doing anything
   useEffect(() => {
-    const timer = setTimeout(() => setLoaded(), 1000);
-    return () => clearTimeout(timer);
-  }, [setLoaded]);
+    setMounted(true);
+  }, []);
 
+  // 2. Trigger the load state
   useEffect(() => {
-    if (isLoaded && !showBanner) {
-      const timer = setTimeout(() => setShowBanner(true), 1000);
+    if (mounted && !isLoaded) {
+      const timer = setTimeout(() => setLoaded(), 1000);
       return () => clearTimeout(timer);
     }
-  }, [isLoaded, showBanner]);
+  }, [mounted, isLoaded, setLoaded]);
+
+  // 3. Trigger the banner after the splash is finished
+  useEffect(() => {
+    if (isLoaded && mounted) {
+      const timer = setTimeout(() => setShowBanner(true), 500);
+      return () => clearTimeout(timer);
+    }
+  }, [isLoaded, mounted]);
+
+  // If not mounted, render nothing to match server-side initial state
+  if (!mounted) return null;
 
   return (
     <>
@@ -45,7 +60,6 @@ export default function SplashScreen() {
                 width={400}
                 height={400}
                 priority
-                color="white"
               />
             </motion.h1>
             <motion.div
@@ -62,40 +76,39 @@ export default function SplashScreen() {
         {showBanner && (
           <>
             <motion.div
-              viewport={{ once: true }}
               initial={{ opacity: 0, scale: 1.3 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
+              transition={{ duration: 0.8 }}
               className="absolute h-full w-full"
             >
               <Image
                 src="/assets/background-home.svg"
                 alt="BG-Home"
                 fill
-                className="object-cover object-center opacity-70"
+                className="object-cover opacity-70"
                 priority
               />
             </motion.div>
             <div className="relative z-10 flex flex-col items-center justify-center h-full px-4">
               <FloatIn>
-                <FloatIn className="bg-black/70 p-10 rounded-4xl md:w-[60vw] :h-[35vh] flex flex-col justify-center gap-4">
-                  <div className="border rounded-full w-full 2xl:w-[15vw] text-center">
-                    UNIFIED DIGITAL EXPERIENCES
-                  </div>
+                <FloatIn className="bg-black/70 p-10 rounded-4xl md:w-[60vw] :h-[35vh] flex flex-col justify-center gap-4 text-white">
+                  <FloatIn>
+                    <div className="border rounded-full w-full 2xl:w-[15vw] text-center">
+                      {t("banner1")}
+                    </div>
+                  </FloatIn>
                   <FloatIn>
                     <div className="text-2xl xl:text-5xl font-bold xl:m-4">
-                      ENZAR Digital - Engineering
-                      <br /> the Future of Secure Digital
+                      {t("banner2")}
+                      <br /> {t("banner3")}
                       <br />
-                      Transformation
+                      {t("banner4")}
                     </div>
                   </FloatIn>
                   <FloatIn>
                     <div className="text-sm xl:text-lg font-semibold xl:m-4">
-                      A multidisciplinary team of innovators delivering
-                      scalable, secure, <br />
-                      and high-impact digital solutions for government and
-                      enterprise sectors.
+                      {t("banner5")} <br />
+                      {t("banner6")}
                     </div>
                   </FloatIn>
                 </FloatIn>
