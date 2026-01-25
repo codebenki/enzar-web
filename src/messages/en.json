@@ -410,5 +410,300 @@
         "Building the digital future together"
       ]
     ]
+  },
+  "About": {
+    "description": [
+      "About Enzar Digital",
+      "The Digital Excellence Center of Enzar Group",
+      "Who We Are",
+      "Enzar Digital is the digital transformation powerhouse of Enzar Group, combining over 20 years of security and operational expertise with cutting-edge technological innovation to deliver integrated digital solutions.",
+      "Why We Exist",
+      "Our mission is to empower organizations with advanced digital platforms that transform complex operations into seamless experiences. We believe in the power of technology to create lasting value and sustainable growth."
+    ]
+  },
+  "Services": {
+    "services": [
+      {
+        "title": [
+          "Digital Transformation",
+          "Venture Building",
+          "Business Consulting",
+          "Technology Consulting",
+          "Innovation & Strategy",
+          "Data & Analytics"
+        ],
+        "description": [
+          "Transform your operations with innovative digital solutions that increase efficiency and drive growth.",
+          "Launch digital products from zero to market with speed and efficiency.",
+          "Strategic guidance to align your business goals with the right technology solutions.",
+          "Deep expertise in modern technologies and the right tech stack selection.",
+          "Lead innovation through data-driven strategies and design thinking.",
+          "Turn data into actionable insights for better decision-making."
+        ],
+        "features": [
+          [
+            "Digital strategy development",
+            "Legacy system modernization",
+            "Cloud architecture",
+            "API integration"
+          ],
+          [
+            "Idea validation",
+            "MVP development",
+            "Go-to-market strategy",
+            "Product scaling"
+          ],
+          [
+            "Strategic planning",
+            "Process analysis",
+            "Business optimization",
+            "Change management"
+          ],
+          [
+            "Architecture review",
+            "Technology selection",
+            "Code review",
+            "Best practices"
+          ],
+          [
+            "Innovation workshops",
+            "Market research",
+            "Digital roadmap",
+            "Design thinking"
+          ],
+          [
+            "Data engineering",
+            "Business intelligence",
+            "Predictive analytics",
+            "Data visualization"
+          ]
+        ]
+      }
+    ],
+    "description": [
+      "Our Services",
+      "Comprehensive solutions to digitally transform your business and drive innovation",
+      "Ready to Start Your Project?",
+      "Let's discuss how we can help you achieve your digital goals",
+      "Contact Us"
+    ]
+  },
+  "Culture": {
+    "values": {
+      "title": [
+        "Passion & Excellence",
+        "Collaboration & Teamwork",
+        "Innovation & Creativity",
+        "Customer Focus",
+        "Quality & Professionalism",
+        "Diversity & Inclusion"
+      ],
+      "description": [
+        "We are passionate about what we do and strive for excellence in every project",
+        "We believe in the power of teamwork and collaboration to achieve exceptional results",
+        "We encourage creative thinking and continuous innovation in our solutions",
+        "We put our clients at the heart of everything we do and strive to exceed their expectations",
+        "We commit to the highest standards of quality and professionalism in all our work",
+        "We celebrate diversity and create an inclusive environment where everyone thrives"
+      ]
+    },
+    "stats": [
+      { "label": "Team Members", "value": "150+" },
+      { "label": "Countries", "value": "15+" },
+      { "label": "Women in Leadership", "value": "45%" },
+      { "label": "Employee Satisfaction", "value": "98%" }
+    ],
+    "description": [
+      "Our Culture",
+      "A workplace that inspires creativity, celebrates diversity, and drives innovation",
+      "Our Values",
+      "The principles that guide our work and shape our culture",
+      "Work Environment",
+      "We provide a flexible and stimulating work environment that encourages professional and personal development. We believe in work-life balance and offer opportunities for continuous learning and growth.",
+      "Careers Philosophy",
+      "We seek talented and passionate individuals who share our vision for innovation and excellence. We invest in our team and provide opportunities for growth and development in a supportive and stimulating environment.",
+      "Explore Careers"
+    ]
+  },
+  "Media": {
+    "newsItems": {
+      "category": ["Company News", "Partnership", "Award"],
+      "date": ["Jan 15, 2024", "Jan 10, 2024", "Jan 5, 2024"],
+      "title": [
+        "Enzar Digital Launches Innovative Logistics Platform",
+        "New Strategic Partnership with Industry Leaders",
+        "Awarded Best Digital Innovation"
+      ],
+      "description": [
+        "Announcing our new digital platform revolutionizing the logistics industry",
+        "Collaborating with leading partners to expand our digital services",
+        "International recognition for our innovative digital solutions in logistics"
+      ]
+    },
+    "insightItems": {
+      "type": ["Tech Insights", "Thought Leadership", "Case Study"],
+      "date": ["Jan 20, 2024", "Jan 18, 2024", "Jan 12, 2024"],
+      "readTime": ["5 min read", "8 min read", "10 min read"],
+      "title": [
+        "The Future of Digital Transformation in Logistics",
+        "Building Scalable Digital Platforms",
+        "Transforming Logistics Operations: A Success Story"
+      ],
+      "description": [
+        "Exploring the trends and technologies shaping the industry's future",
+        "Best practices and lessons learned from developing enterprise-grade solutions",
+        "How we helped a major client achieve 40% operational efficiency"
+      ]
+    },
+    "description": [
+      "Media",
+      "Latest news, insights, and updates from Enzar Digital",
+      ["News", "Insights"],
+      [
+        "Latest updates and announcements from the company",
+        "Thought leadership and in-depth articles from our experts"
+      ],
+      "Image Placeholder",
+      "Read More",
+      "Read Article"
+    ]
+  },
+  "Career": {
+    "perks": [
+      {
+        "title": "Competitive Salaries",
+        "description": "Competitive salary packages and performance bonuses"
+      },
+      {
+        "title": "Professional Growth",
+        "description": "Continuous training and professional development programs"
+      },
+      {
+        "title": "Flexible Work",
+        "description": "Flexible work options including remote work"
+      },
+      {
+        "title": "Health Insurance",
+        "description": "Comprehensive health insurance for you and your family"
+      },
+      {
+        "title": "Annual Leave",
+        "description": "Generous annual leave and sick leave"
+      },
+      {
+        "title": "Creative Environment",
+        "description": "Stimulating work environment that encourages creativity and innovation"
+      }
+    ],
+    "jobs": [
+      {
+        "title": "Senior Software Engineer",
+        "dept": "Engineering",
+        "location": "Riyadh, Saudi Arabia",
+        "type": "Full-time"
+      },
+      {
+        "title": "UI/UX Designer",
+        "dept": "Design",
+        "location": "Jeddah, Saudi Arabia",
+        "type": "Full-time"
+      },
+      {
+        "title": "Product Manager",
+        "dept": "Product",
+        "location": "Riyadh, Saudi Arabia",
+        "type": "Full-time"
+      },
+      {
+        "title": "DevOps Engineer",
+        "dept": "Infrastructure",
+        "location": "Remote",
+        "type": "Full-time"
+      },
+      {
+        "title": "Data Analyst",
+        "dept": "Data",
+        "location": "Dammam, Saudi Arabia",
+        "type": "Full-time"
+      },
+      {
+        "title": "Full Stack Developer",
+        "dept": "Engineering",
+        "location": "Riyadh, Saudi Arabia",
+        "type": "Full-time"
+      }
+    ],
+    "description": [
+      "Careers",
+      "Join our team and be part of our journey to transform the digital future",
+      ["Benefits & Perks", "Open Positions"],
+      [
+        "We care about our team and offer comprehensive benefits",
+        "Explore available opportunities and find the right role for you"
+      ],
+      "Looking for a passionate individual to join our",
+      "team and help build the future of digital solutions.",
+      "Apply Now"
+    ]
+  },
+  "Contact": {
+    "offices": [
+      {
+        "id": 1,
+        "city": "Head office",
+        "address": "Al-Sulimania, 25 Taha Hussain st., P. O. Box 9390, Riyadh 11413",
+        "phones": ["+966 11 4169057", "+966 11 4615735", "+966 11 4630853"],
+        "web": "www.enzar.com",
+        "email": "info@enzar.com",
+        "mapUrl": "#"
+      },
+      {
+        "id": 2,
+        "city": "Jeddah Office",
+        "address": "Al-Salama district, P. O. Box 14994, Jeddah 21434",
+        "phones": ["+966 11 4169057", "+966 11 4615735", "+966 11 4630853"],
+        "web": "www.enzar.com",
+        "email": "info@enzar.com",
+        "mapUrl": "#"
+      },
+      {
+        "id": 3,
+        "city": "Al Khobar Office",
+        "address": "Al Akrabia district, P. O. Box 21591, AL Khobar 31952",
+        "phones": ["+966 11 4169057", "+966 11 4615735", "+966 11 4630853"],
+        "web": "www.enzar.com",
+        "email": "info@enzar.com",
+        "mapUrl": "#"
+      }
+    ],
+    "description": [
+      "Contact Us",
+      "We're here to help. Reach out to us and we'll be happy to answer your questions",
+      "Here you will find all informations about our Branches.",
+      "Google Maps",
+      "Ready to start your project?",
+      "Get in touch with us today and let us transform your vision into stunning digital reality.",
+      "Start Conversation",
+      "Send Us a Message",
+      "Fill out the form below and we'll get back to you as soon as possible",
+      [
+        "First Name",
+        "Enter your first name",
+        "Last Name",
+        "Enter your last name",
+        "Email",
+        "Enter your email",
+        "Phone Number",
+        "Enter your phone number",
+        "Subject",
+        "What is your message about?",
+        "Message",
+        "Write your message here...",
+        "Send Message"
+      ],
+      "Subscribe to Our Newsletter",
+      "Get the latest news and updates delivered directly to your inbox",
+      "Subscribe"
+    ]
   }
 }

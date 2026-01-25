@@ -1,7 +1,6 @@
 "use client";
 import { FloatIn } from "@/components/FloatIn";
 import Footer from "@/components/Footer";
-import React from "react";
 import {
   MapPin,
   Phone,
@@ -11,38 +10,13 @@ import {
   MessageSquare,
   Send,
 } from "lucide-react";
-
-const offices = [
-  {
-    id: 1,
-    city: "Head office",
-    address: "Al-Sulimania, 25 Taha Hussain st., P. O. Box 9390, Riyadh 11413",
-    phones: ["+966 11 4169057", "+966 11 4615735", "+966 11 4630853"],
-    web: "www.enzar.com",
-    email: "info@enzar.com",
-    mapUrl: "#",
-  },
-  {
-    id: 2,
-    city: "Jeddah Office",
-    address: "Al-Salama district, P. O. Box 14994, Jeddah 21434",
-    phones: ["+966 11 4169057", "+966 11 4615735", "+966 11 4630853"],
-    web: "www.enzar.com",
-    email: "info@enzar.com",
-    mapUrl: "#",
-  },
-  {
-    id: 3,
-    city: "Al Khobar Office",
-    address: "Al Akrabia district, P. O. Box 21591, AL Khobar 31952",
-    phones: ["+966 11 4169057", "+966 11 4615735", "+966 11 4630853"],
-    web: "www.enzar.com",
-    email: "info@enzar.com",
-    mapUrl: "#",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function Contact() {
+  const t = useTranslations("Contact");
+
+  const offices = Array.isArray(t.raw("offices")) ? t.raw("offices") : [];
+
   return (
     <>
       <section className="bg-black py-24 px-6 pt-32">
@@ -51,11 +25,10 @@ export default function Contact() {
           <div className="text-center mb-24">
             <FloatIn direction="up">
               <h1 className="text-5xl md:text-8xl font-bold text-white mb-6">
-                Contact Us
+                {t("description.0")}
               </h1>
               <p className="text-neutral-400 text-lg md:text-xl tracking-widest uppercase font-medium">
-                We're here to help. Reach out to us and we'll be happy to answer
-                your questions
+                {t("description.1")}
               </p>
             </FloatIn>
           </div>
@@ -66,14 +39,12 @@ export default function Contact() {
           {/* BRANCH INFORMATION */}
           <div className="text-center">
             <FloatIn direction="up">
-              <h1 className="text-5xl font-bold mb-4">Contact Us</h1>
-              <p className="text-neutral-500 mb-16">
-                Here you will find all informations about our Branches.
-              </p>
+              <h1 className="text-5xl font-bold mb-4">{t("description.0")}</h1>
+              <p className="text-neutral-500 mb-16">{t("description.2")}</p>
             </FloatIn>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {offices.map((office, idx) => (
+              {offices.map((office: any, idx: any) => (
                 <FloatIn key={office.id} direction="up" delay={idx * 0.1}>
                   <div className="bg-[#0a0a0a] border border-white/5 rounded-3xl p-8 text-left relative group hover:border-red-600/30 transition-all h-full">
                     <div className="absolute top-6 right-6 w-6 h-6 rounded-full bg-red-600 flex items-center justify-center text-[10px] font-bold">
@@ -98,13 +69,13 @@ export default function Contact() {
                             href={office.mapUrl}
                             className="text-red-500 flex items-center gap-1 text-xs font-bold hover:underline"
                           >
-                            Google Maps <ExternalLink size={12} />
+                            {t("description.3")} <ExternalLink size={12} />
                           </a>
                         </div>
                       </div>
 
                       <div className="space-y-2">
-                        {office.phones.map((phone, pIdx) => (
+                        {office.phones.map((phone: any, pIdx: any) => (
                           <div key={pIdx} className="flex items-center gap-3">
                             <Phone size={14} className="shrink-0" /> {phone}
                           </div>
@@ -128,15 +99,12 @@ export default function Contact() {
           {/* INTERMEDIATE CTA BANNER */}
           <FloatIn direction="up">
             <div className="bg-[#0a0a0a] border border-white/5 rounded-3xl p-12 text-center max-w-3xl mx-auto">
-              <h2 className="text-2xl font-bold mb-4">
-                Ready to start your project?
-              </h2>
+              <h2 className="text-2xl font-bold mb-4">{t("description.4")}</h2>
               <p className="text-neutral-500 mb-8 max-w-md mx-auto">
-                Get in touch with us today and let us transform your vision into
-                stunning digital reality.
+                {t("description.5")}
               </p>
               <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 mx-auto shadow-[0_0_30px_rgba(220,38,38,0.3)] transition-all">
-                <MessageSquare size={16} /> Start Conversation
+                <MessageSquare size={16} /> {t("description.6")}
               </button>
             </div>
           </FloatIn>
@@ -145,31 +113,30 @@ export default function Contact() {
           <div className="max-w-3xl mx-auto">
             <FloatIn direction="up">
               <div className="bg-[#0a0a0a] border border-white/5 rounded-3xl p-8 md:p-12">
-                <h2 className="text-3xl font-bold mb-2">Send Us a Message</h2>
-                <p className="text-neutral-500 mb-10">
-                  Fill out the form below and we'll get back to you as soon as
-                  possible
-                </p>
+                <h2 className="text-3xl font-bold mb-2">
+                  {t("description.7")}
+                </h2>
+                <p className="text-neutral-500 mb-10">{t("description.8")}</p>
 
                 <form className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-xs font-bold uppercase tracking-widest text-neutral-400">
-                        First Name
+                        {t("description.9.0")}
                       </label>
                       <input
                         type="text"
-                        placeholder="Enter your first name"
+                        placeholder={t("description.9.1")}
                         className="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-red-600/50 transition-colors"
                       />
                     </div>
                     <div className="space-y-2">
                       <label className="text-xs font-bold uppercase tracking-widest text-neutral-400">
-                        Last Name
+                        {t("description.9.2")}
                       </label>
                       <input
                         type="text"
-                        placeholder="Enter your last name"
+                        placeholder={t("description.9.3")}
                         className="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-red-600/50 transition-colors"
                       />
                     </div>
@@ -177,44 +144,44 @@ export default function Contact() {
 
                   <div className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-widest text-neutral-400">
-                      Email
+                      {t("description.9.4")}
                     </label>
                     <input
                       type="email"
-                      placeholder="Enter your email"
+                      placeholder={t("description.9.5")}
                       className="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-red-600/50 transition-colors"
                     />
                   </div>
 
                   <div className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-widest text-neutral-400">
-                      Phone Number
+                      {t("description.9.6")}
                     </label>
                     <input
                       type="tel"
-                      placeholder="Enter your phone number"
+                      placeholder={t("description.9.7")}
                       className="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-red-600/50 transition-colors"
                     />
                   </div>
 
                   <div className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-widest text-neutral-400">
-                      Subject
+                      {t("description.9.8")}
                     </label>
                     <input
                       type="text"
-                      placeholder="What is your message about?"
+                      placeholder={t("description.9.9")}
                       className="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-red-600/50 transition-colors"
                     />
                   </div>
 
                   <div className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-widest text-neutral-400">
-                      Message
+                      {t("description.9.10")}
                     </label>
                     <textarea
                       rows={4}
-                      placeholder="Write your message here..."
+                      placeholder={t("description.9.11")}
                       className="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-red-600/50 transition-colors resize-none"
                     ></textarea>
                   </div>
@@ -223,7 +190,7 @@ export default function Contact() {
                     type="submit"
                     className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 rounded-xl shadow-lg transition-all active:scale-[0.98]"
                   >
-                    Send Message
+                    {t("description.9.12")}
                   </button>
                 </form>
               </div>
@@ -233,20 +200,16 @@ export default function Contact() {
           {/* NEWSLETTER FOOTER */}
           <div className="text-center pt-24 pb-12">
             <FloatIn direction="up">
-              <h2 className="text-3xl font-bold mb-4">
-                Subscribe to Our Newsletter
-              </h2>
-              <p className="text-neutral-500 mb-8">
-                Get the latest news and updates delivered directly to your inbox
-              </p>
+              <h2 className="text-3xl font-bold mb-4">{t("description.10")}</h2>
+              <p className="text-neutral-500 mb-8">{t("description.11")}</p>
               <div className="flex flex-col md:flex-row items-center justify-center gap-3 max-w-md mx-auto">
                 <input
                   type="email"
-                  placeholder="Enter your email"
+                  placeholder={t("description.9.5")}
                   className="w-full bg-transparent border border-white/10 rounded-full px-6 py-3 text-sm focus:outline-none focus:border-red-600/50 transition-colors"
                 />
                 <button className="whitespace-nowrap bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg transition-all">
-                  Subscribe
+                  {t("description.12")}
                 </button>
               </div>
             </FloatIn>

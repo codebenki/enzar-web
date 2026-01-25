@@ -1,76 +1,15 @@
 "use client";
 import { FloatIn } from "@/components/FloatIn";
 import Footer from "@/components/Footer";
-import { ArrowUpRight, MapPin, Briefcase, Clock } from "lucide-react";
-
-const perks = [
-  {
-    title: "Competitive Salaries",
-    description: "Competitive salary packages and performance bonuses",
-  },
-  {
-    title: "Professional Growth",
-    description: "Continuous training and professional development programs",
-  },
-  {
-    title: "Flexible Work",
-    description: "Flexible work options including remote work",
-  },
-  {
-    title: "Health Insurance",
-    description: "Comprehensive health insurance for you and your family",
-  },
-  {
-    title: "Annual Leave",
-    description: "Generous annual leave and sick leave",
-  },
-  {
-    title: "Creative Environment",
-    description:
-      "Stimulating work environment that encourages creativity and innovation",
-  },
-];
-
-const jobs = [
-  {
-    title: "Senior Software Engineer",
-    dept: "Engineering",
-    location: "Riyadh, Saudi Arabia",
-    type: "Full-time",
-  },
-  {
-    title: "UI/UX Designer",
-    dept: "Design",
-    location: "Jeddah, Saudi Arabia",
-    type: "Full-time",
-  },
-  {
-    title: "Product Manager",
-    dept: "Product",
-    location: "Riyadh, Saudi Arabia",
-    type: "Full-time",
-  },
-  {
-    title: "DevOps Engineer",
-    dept: "Infrastructure",
-    location: "Remote",
-    type: "Full-time",
-  },
-  {
-    title: "Data Analyst",
-    dept: "Data",
-    location: "Dammam, Saudi Arabia",
-    type: "Full-time",
-  },
-  {
-    title: "Full Stack Developer",
-    dept: "Engineering",
-    location: "Riyadh, Saudi Arabia",
-    type: "Full-time",
-  },
-];
+import { ArrowUpRight, MapPin, Briefcase, Clock, Dot } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function Career() {
+  const t = useTranslations("Career");
+
+  const perks = Array.isArray(t.raw("perks")) ? t.raw("perks") : [];
+  const jobs = Array.isArray(t.raw("jobs")) ? t.raw("jobs") : [];
+
   return (
     <>
       <section className="bg-black py-24 px-6 pt-32">
@@ -79,11 +18,10 @@ export default function Career() {
           <div className="text-center mb-24">
             <FloatIn direction="up">
               <h1 className="text-5xl md:text-8xl font-bold text-white mb-6">
-                Careers
+                {t("description.0")}
               </h1>
               <p className="text-neutral-400 text-lg md:text-xl tracking-widest uppercase font-medium">
-                Join our team and be part of our journey to transform the
-                digital future
+                {t("description.1")}
               </p>
             </FloatIn>
           </div>
@@ -95,16 +33,14 @@ export default function Career() {
           <div className="text-center mb-16">
             <FloatIn direction="up">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                Benefits & Perks
+                {t("description.2.0")}
               </h2>
-              <p className="text-neutral-500">
-                We care about our team and offer comprehensive benefits
-              </p>
+              <p className="text-neutral-500">{t("description.3.0")}</p>
             </FloatIn>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-32">
-            {perks.map((perk, idx) => (
+            {perks.map((perk: any, idx: any) => (
               <FloatIn key={idx} direction="up" delay={idx * 0.05}>
                 <div className="bg-[#0a0a0a] border border-white/5 p-8 rounded-2xl h-full hover:border-red-600/20 transition-colors">
                   <h3 className="text-white font-bold text-lg mb-2">
@@ -122,16 +58,14 @@ export default function Career() {
           <div className="mb-12">
             <FloatIn direction="up">
               <h2 className="text-4xl font-bold text-white mb-4">
-                Open Positions
+                {t("description.2.1")}
               </h2>
-              <p className="text-neutral-500">
-                Explore available opportunities and find the right role for you
-              </p>
+              <p className="text-neutral-500">{t("description.3.1")}</p>
             </FloatIn>
           </div>
 
           <div className="space-y-4">
-            {jobs.map((job, idx) => (
+            {jobs.map((job: any, idx: any) => (
               <FloatIn key={idx} direction="up" delay={idx * 0.1}>
                 <div className="group bg-[#0a0a0a] border border-white/5 p-6 md:p-8 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-white/2 transition-all">
                   <div className="space-y-4">
@@ -140,12 +74,16 @@ export default function Career() {
                         <Briefcase size={12} className="text-red-600" />{" "}
                         {job.dept}
                       </span>
-                      <span className="text-neutral-700">•</span>
+                      <span className="text-neutral-700">
+                        <Dot />
+                      </span>
                       <span className="flex items-center gap-1.5 text-neutral-400">
                         <MapPin size={12} className="text-red-600" />{" "}
                         {job.location}
                       </span>
-                      <span className="text-neutral-700">•</span>
+                      <span className="text-neutral-700">
+                        <Dot />
+                      </span>
                       <span className="flex items-center gap-1.5 text-neutral-400">
                         <Clock size={12} className="text-red-600" /> {job.type}
                       </span>
@@ -154,14 +92,13 @@ export default function Career() {
                       {job.title}
                     </h3>
                     <p className="text-sm text-neutral-500 max-w-xl">
-                      Looking for a passionate individual to join our{" "}
-                      {job.dept.toLowerCase()} team and help build the future of
-                      digital solutions.
+                      {t("description.4")} {job.dept.toLowerCase()}{" "}
+                      {t("description.5")}
                     </p>
                   </div>
 
                   <button className="shrink-0 bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 shadow-[0_0_20px_rgba(220,38,38,0.2)] transition-all active:scale-95">
-                    Apply Now <ArrowUpRight size={16} />
+                    {t("description.6")} <ArrowUpRight size={16} />
                   </button>
                 </div>
               </FloatIn>

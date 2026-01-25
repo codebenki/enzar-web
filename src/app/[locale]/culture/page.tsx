@@ -1,59 +1,41 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
 import { Heart, Users2, Lightbulb, Target, Award, Globe } from "lucide-react";
 import { FloatIn } from "@/components/FloatIn";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
-const stats = [
-  { label: "Team Members", value: "150+" },
-  { label: "Countries", value: "15+" },
-  { label: "Women in Leadership", value: "45%" },
-  { label: "Employee Satisfaction", value: "98%" },
+const icons = [
+  <Heart className="w-6 h-6 text-red-600" />,
+  <Users2 className="w-6 h-6 text-red-600" />,
+  <Lightbulb className="w-6 h-6 text-red-600" />,
+  <Target className="w-6 h-6 text-red-600" />,
+  <Award className="w-6 h-6 text-red-600" />,
+  <Globe className="w-6 h-6 text-red-600" />,
 ];
 
-const values = [
-  {
-    title: "Passion & Excellence",
-    description:
-      "We are passionate about what we do and strive for excellence in every project",
-    icon: <Heart className="w-6 h-6 text-red-600" />,
-  },
-  {
-    title: "Collaboration & Teamwork",
-    description:
-      "We believe in the power of teamwork and collaboration to achieve exceptional results",
-    icon: <Users2 className="w-6 h-6 text-red-600" />,
-  },
-  {
-    title: "Innovation & Creativity",
-    description:
-      "We encourage creative thinking and continuous innovation in our solutions",
-    icon: <Lightbulb className="w-6 h-6 text-red-600" />,
-  },
-  {
-    title: "Customer Focus",
-    description:
-      "We put our clients at the heart of everything we do and strive to exceed their expectations",
-    icon: <Target className="w-6 h-6 text-red-600" />,
-  },
-  {
-    title: "Quality & Professionalism",
-    description:
-      "We commit to the highest standards of quality and professionalism in all our work",
-    icon: <Award className="w-6 h-6 text-red-600" />,
-  },
-  {
-    title: "Diversity & Inclusion",
-    description:
-      "We celebrate diversity and create an inclusive environment where everyone thrives",
-    icon: <Globe className="w-6 h-6 text-red-600" />,
-  },
-];
+type Values = {
+  title: string[];
+  description: string[];
+};
+type Stats = {
+  value: string;
+  label: string;
+};
 
 export default function Culture() {
+  const t = useTranslations("Culture");
+
+  const data = t.raw("values");
+  const values = data.title.map((title: any, index: any) => ({
+    title: title,
+    description: data.description[index],
+    icon: icons[index],
+  }));
+
+  const dataStats = t.raw("stats") as Stats[];
+  const stats = Array.isArray(dataStats) ? dataStats : [];
+
   return (
     <>
       <section className="bg-black py-24 px-6 pt-32">
@@ -62,11 +44,10 @@ export default function Culture() {
           <div className="text-center mb-24">
             <FloatIn direction="up">
               <h1 className="text-5xl md:text-8xl font-bold text-white mb-6">
-                Our Culture
+                {t("description.0")}
               </h1>
               <p className="text-neutral-400 text-lg md:text-xl tracking-widest uppercase font-medium">
-                A workplace that inspires creativity, celebrates diversity, and
-                drives innovation
+                {t("description.1")}
               </p>
             </FloatIn>
           </div>
@@ -78,7 +59,7 @@ export default function Culture() {
             {/* TOP STATS */}
             <FloatIn>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-32 text-center">
-                {stats.map((stat, idx) => (
+                {stats.map((stat: any, idx: any) => (
                   <div key={idx} className="space-y-2">
                     <p className="text-4xl lg:text-5xl font-bold text-red-600">
                       {stat.value}
@@ -95,17 +76,17 @@ export default function Culture() {
               {/* SECTION HEADER */}
               <div className="text-center mb-16">
                 <h2 className="text-4xl font-bold text-white mb-4">
-                  Our Values
+                  {t("description.2")}
                 </h2>
                 <p className="text-neutral-500 max-w-2xl mx-auto">
-                  The principles that guide our work and shape our culture
+                  {t("description.3")}
                 </p>
               </div>
             </FloatIn>
 
             {/* VALUES GRID */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-32">
-              {values.map((item, idx) => (
+              {values.map((item: any, idx: any) => (
                 <FloatIn key={idx}>
                   <div
                     key={idx}
@@ -128,13 +109,10 @@ export default function Culture() {
               <FloatIn>
                 <div className="space-y-6">
                   <h2 className="text-4xl font-bold text-white">
-                    Work Environment
+                    {t("description.4")}
                   </h2>
                   <p className="text-neutral-400 leading-relaxed">
-                    We provide a flexible and stimulating work environment that
-                    encourages professional and personal development. We believe
-                    in work-life balance and offer opportunities for continuous
-                    learning and growth.
+                    {t("description.5")}
                   </p>
                   <ul className="space-y-3">
                     {[
@@ -157,18 +135,15 @@ export default function Culture() {
               <FloatIn>
                 <div className="space-y-6">
                   <h2 className="text-4xl font-bold text-white">
-                    Careers Philosophy
+                    {t("description.6")}
                   </h2>
                   <p className="text-neutral-400 leading-relaxed">
-                    We seek talented and passionate individuals who share our
-                    vision for innovation and excellence. We invest in our team
-                    and provide opportunities for growth and development in a
-                    supportive and stimulating environment.
+                    {t("description.7")}
                   </p>
                   <button className="relative group overflow-hidden">
                     <div className="absolute inset-0 bg-red-600 rounded-full blur-md opacity-20 group-hover:opacity-40 transition-opacity" />
                     <div className="relative bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-bold transition-all active:scale-95">
-                      <Link href={"/en/career"}>Explore Careers</Link>
+                      <Link href={"/career"}>{t("description.8")}</Link>
                     </div>
                   </button>
                 </div>
