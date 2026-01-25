@@ -1,126 +1,42 @@
 "use client";
-import React from "react";
 import { Timeline } from "../ui/timeline";
 import { WobbleCard } from "../ui/wobble-card";
 import { FloatIn } from "../FloatIn"; // Using the global animation we made
+import { useTranslations } from "next-intl";
+import { Calendar, Landmark } from "lucide-react";
 
 export default function TimelineHome() {
-  const data = [
-    {
-      title: "1987",
-      content: (
-        <WobbleCard containerClassName="rounded-[30px]! overflow-hidden bg-black/50 border border-red-500/60">
-          <div className="space-y-4">
-            <div className="bg-red-500/10 text-red-700 text-xs font-bold px-2 py-1 rounded-md w-fit flex items-center gap-2">
-              <span>📅</span> 1987
-            </div>
-            <h3 className="text-xl md:text-2xl font-bold text-white">
-              German Heritage Begins
-            </h3>
-            <p className="text-neutral-400 text-sm md:text-base leading-relaxed">
-              IBCOL - German company established as a leader in integrated
-              security systems in Saudi Arabia.
-            </p>
+  const t = useTranslations();
+
+  const timeline = t.raw("Timeline") as {
+    title: string[];
+    header: string[];
+    description: string[];
+  };
+
+  const data = timeline.title.map((title, index) => ({
+    title,
+    content: (
+      <WobbleCard containerClassName="rounded-[30px]! overflow-hidden bg-black/50 border border-red-500/60">
+        <div className="space-y-4">
+          <div className="bg-red-500/10 text-red-700 text-xs font-bold px-2 py-1 rounded-md w-fit flex items-center gap-2">
+            <Calendar />
+            {title}
           </div>
-        </WobbleCard>
-      ),
-    },
-    {
-      title: "2002",
-      content: (
-        <WobbleCard containerClassName="rounded-[30px]! overflow-hidden bg-black/50 border border-red-500/60">
-          <div className="space-y-4">
-            <div className="bg-red-500/10 text-red-500 text-xs font-bold px-2 py-1 rounded-md w-fit flex items-center gap-2">
-              <span>📅</span> 2002
-            </div>
-            <h3 className="text-xl md:text-2xl font-bold text-white">
-              ENZAR is Born
-            </h3>
-            <p className="text-neutral-400 text-sm md:text-base leading-relaxed">
-              ENZAR Company founded as successor to IBCOL, combining German
-              excellence with local expertise.
-            </p>
-          </div>
-        </WobbleCard>
-      ),
-    },
-    {
-      title: "2010",
-      content: (
-        <WobbleCard containerClassName="rounded-[30px]! overflow-hidden bg-black/50 border border-red-500/60">
-          <div className="space-y-4">
-            <div className="bg-red-500/10 text-red-500 text-xs font-bold px-2 py-1 rounded-md w-fit flex items-center gap-2">
-              <span>📅</span> 2010
-            </div>
-            <h3 className="text-xl md:text-2xl font-bold text-white">
-              Growth & Expansion
-            </h3>
-            <p className="text-neutral-400 text-sm md:text-base leading-relaxed">
-              Full acquisition of IBCOL assets and expansion of services across
-              Saudi Arabia with Saudi Aramco approval.
-            </p>
-          </div>
-        </WobbleCard>
-      ),
-    },
-    {
-      title: "2020",
-      content: (
-        <WobbleCard containerClassName="rounded-[30px]! overflow-hidden bg-black/50 border border-red-500/60">
-          <div className="space-y-4">
-            <div className="bg-red-500/10 text-red-500 text-xs font-bold px-2 py-1 rounded-md w-fit flex items-center gap-2">
-              <span>📅</span> 2020
-            </div>
-            <h3 className="text-xl md:text-2xl font-bold text-white">
-              Digital Transformation
-            </h3>
-            <p className="text-neutral-400 text-sm md:text-base leading-relaxed">
-              Launch of digital transformation initiatives, integrating AI and
-              machine learning into security solutions
-            </p>
-          </div>
-        </WobbleCard>
-      ),
-    },
-    {
-      title: "2023",
-      content: (
-        <WobbleCard containerClassName="rounded-[30px]! overflow-hidden bg-black/50 border border-red-500/60">
-          <div className="space-y-4">
-            <div className="bg-red-500/10 text-red-500 text-xs font-bold px-2 py-1 rounded-md w-fit flex items-center gap-2">
-              <span>📅</span> 2023
-            </div>
-            <h3 className="text-xl md:text-2xl font-bold text-white">
-              Enzar Digital
-            </h3>
-            <p className="text-neutral-400 text-sm md:text-base leading-relaxed">
-              Establishment of Enzar Digital - the center of excellence driving
-              innovation in digital and security solutions
-            </p>
-          </div>
-        </WobbleCard>
-      ),
-    },
-    {
-      title: "2024+",
-      content: (
-        <WobbleCard containerClassName="rounded-[30px]! overflow-hidden bg-black/50 border border-red-500/60">
-          <div className="space-y-4">
-            <div className="bg-red-500/10 text-red-500 text-xs font-bold px-2 py-1 rounded-md w-fit flex items-center gap-2">
-              <span>📅</span> 2024+
-            </div>
-            <h3 className="text-xl md:text-2xl font-bold text-white">
-              The Future
-            </h3>
-            <p className="text-neutral-400 text-sm md:text-base leading-relaxed">
-              Expansion into software development, cloud computing, and
-              AI-powered solutions shaping the future of digital security
-            </p>
-          </div>
-        </WobbleCard>
-      ),
-    },
-  ];
+
+          <h3 className="text-xl md:text-2xl font-bold text-white">
+            {timeline.header[index]}
+          </h3>
+
+          <p className="text-neutral-400 text-sm md:text-base leading-relaxed">
+            {Object.values(timeline.description[index]).map((desc, i) => (
+              <span key={i}>{desc}</span>
+            ))}
+          </p>
+        </div>
+      </WobbleCard>
+    ),
+  }));
 
   return (
     <section className="relative w-full bg-[#250101] py-10 px-4 md:px-10">
@@ -129,27 +45,34 @@ export default function TimelineHome() {
         <div className="lg:sticky lg:top-24 lg:h-fit space-y-6">
           <FloatIn>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-red-500/30 bg-red-500/10 text-red-500 text-sm font-medium">
-              <span>📅</span> Our Journey
+              <span>
+                <Calendar />
+              </span>
+              {t("Timeline.sidetext.1")}
             </div>
             <h2 className="text-5xl md:text-7xl font-bold text-white leading-tight mt-4">
-              Discover How <br />
-              <span className="text-red-600">ENZAR Was Formed</span>
+              {t("Timeline.sidetext.2")} <br />
+              <span className="text-red-600">{t("Timeline.sidetext.3")}</span>
             </h2>
             <p className="text-neutral-400 text-lg max-w-md">
-              From German heritage to digital innovation - a journey of
-              excellence, expertise, and continuous evolution.
+              {t("Timeline.sidetext.4")}
+              {t("Timeline.sidetext.5")}
             </p>
 
             {/* Heritage Badge */}
             <div className="mt-10 p-6 rounded-[20px] bg-white/5 border border-red-500/60 flex items-center gap-4 w-fit">
               <div className="h-12 w-12 rounded-lg bg-red-600 flex items-center justify-center">
-                <span className="text-white text-2xl">🏛️</span>
+                <span className="text-white text-2xl">
+                  <Landmark />
+                </span>
               </div>
               <div>
                 <p className="text-neutral-400 text-xs uppercase tracking-widest">
-                  Heritage
+                  {t("Timeline.sidetext.6")}
                 </p>
-                <p className="text-white text-2xl font-bold">35+ Years</p>
+                <p className="text-white text-2xl font-bold">
+                  {t("Timeline.sidetext.7")}
+                </p>
               </div>
             </div>
           </FloatIn>

@@ -2,6 +2,708 @@
   "Navbar": {
     "home": "Home",
     "about": "About",
-    "contact": "Contact"
+    "services": "Services",
+    "culture": "Culture",
+    "media": "Media",
+    "careers": "Careers",
+    "contact": "Contact Us"
+  },
+  "Banner": {
+    "banner1": "UNIFIED DIGITAL EXPERIENCES",
+    "banner2": "ENZAR Digital - Engineering",
+    "banner3": "the Future of Secure Digital",
+    "banner4": "Transformation",
+    "banner5": "A multidisciplinary team of innovators delivering scalable, secure,",
+    "banner6": "and high-impact digital solutions for government and enterprise sectors."
+  },
+  "Mission": {
+    "title1": "ENZAR Company - Heritage & Expertise",
+    "subtitle1": "Established in 2002",
+    "points1": {
+      "1": "Over 20 years of integrated security expertise",
+      "2": "Successor to German company IBCOL (1987–2010)",
+      "3": "Saudi Aramco & Public Security approved",
+      "4": "Leading general contractor & systems integrator"
+    },
+    "title2": "Enzar Digital - Technology Powerhouse",
+    "subtitle2": "Digital Excellence Center",
+    "points2": {
+      "1": "Top-tier Software Engineers & AI Specialists",
+      "2": "Cloud Architects & Full-Stack Developers",
+      "3": "Culture rooted in innovation and collaboration",
+      "4": "Modern, secure, future-ready digital solutions"
+    },
+    "header": {
+      "1": "We are",
+      "2": "Enzar Digital"
+    },
+    "description": {
+      "1": "Our Mission",
+      "2": "Enzar Digital is more than a team—it is a center of excellence ",
+      "3": "driving innovation across ENZAR's digital ecosystem, backed ",
+      "4": "by over two decades of security and operational expertise."
+    }
+  },
+  "Timeline": {
+    "title": ["1987", "2002", "2010", "2020", "2023", "2024+"],
+    "header": [
+      "German Heritage Begins",
+      "ENZAR is Born",
+      "Growth & Expansion",
+      "Digital Transformation",
+      "Enzar Digital",
+      "The Future"
+    ],
+    "description": [
+      {
+        "1": "IBCOL - German company established as a leader in integrated",
+        "2": "security systems in Saudi Arabia."
+      },
+      {
+        "1": "ENZAR Company founded as successor to IBCOL, combining German",
+        "2": "excellence with local expertise."
+      },
+      {
+        "1": "Full acquisition of IBCOL assets and expansion of services across",
+        "2": "Saudi Arabia with Saudi Aramco approval."
+      },
+      {
+        "1": "Launch of digital transformation initiatives, integrating AI and",
+        "2": "machine learning into security solutions"
+      },
+      {
+        "1": "Establishment of Enzar Digital - the center of excellence driving",
+        "2": "innovation in digital and security solutions"
+      },
+      {
+        "1": "Expansion into software development, cloud computing, and",
+        "2": "AI-powered solutions shaping the future of digital security"
+      }
+    ],
+    "sidetext": {
+      "1": "Our Journey",
+      "2": "Discover How",
+      "3": "ENZAR Was Formed",
+      "4": "From German heritage to digital innovation - a journey of",
+      "5": "excellence, expertise, and continuous evolution.",
+      "6": "Heritage",
+      "7": "35+ Years"
+    }
+  },
+  "Capabilities": {
+    "card": {
+      "title": [
+        "Software Engineering",
+        "AI & Automation",
+        "Front-End Excellence",
+        "Back-End Engineering",
+        "Cloud & DevOps",
+        "System Integration"
+      ],
+      "color": [
+        "bg-[#2D0D0D]",
+        "bg-[#1E110D]",
+        "bg-[#0D2D23]",
+        "bg-[#2D1B0D]",
+        "bg-[#2D0D0D]",
+        "bg-[#0D2D23]"
+      ],
+      "iconBg": [
+        "bg-red-500",
+        "bg-orange-500",
+        "bg-emerald-500",
+        "bg-amber-600",
+        "bg-red-500",
+        "bg-emerald-500"
+      ],
+      "features": [
+        [
+          "Full-stack development",
+          "Scalable architectures",
+          "API integrations"
+        ],
+        [
+          "Process automation",
+          "Intelligent decision systems",
+          "Predictive analytics"
+        ],
+        [
+          "Modern UI/UX",
+          "High-performance React applications",
+          "Responsive and accessible interfaces"
+        ],
+        [
+          "Secure, modular, scalable backend systems",
+          "High availability and failover design"
+        ],
+        [
+          "Azure cloud experts",
+          "CI/CD pipelines",
+          "Infrastructure as Code",
+          "Containerization & Docker"
+        ],
+        [
+          "Enterprise-grade interoperability",
+          "Workflow automation",
+          "Real-time data pipelines"
+        ]
+      ]
+    },
+    "standards": [
+      { "abbr": "NCA", "name": "National Cybersecurity Authority" },
+      {
+        "abbr": "CITC",
+        "name": "Communications & Information Technology Commission"
+      },
+      {
+        "abbr": "Saudi Gov",
+        "name": "Saudi Government Cybersecurity Standards"
+      }
+    ],
+    "descriptions": {
+      "1": "Our Expertise",
+      "2": "Our Capabilities",
+      "3": "We deliver end-to-end digital solutions built with world-class engineering and aligned with all Saudi national cybersecurity and digital standards.",
+      "4": "Compliance & Security",
+      "5": "Aligned with Saudi Standards"
+    }
+  },
+  "Solutions": {
+    "title": [
+      "Management & Planning Solutions",
+      "Operational Management Tools",
+      "Custom Solutions",
+      "Cloud-Based Platforms"
+    ],
+    "description": [
+      "Tools that streamline project tracking, planning, resource allocation, and operational governance—all customized for complex government and enterprise workflows.",
+      "Comprehensive suite of tools for task management, workflow automation, and performance monitoring.",
+      "Fully tailored digital products designed to meet specific client needs while ensuring full compliance with national regulations.",
+      "Solutions hosted and managed on our Azure infrastructure with enterprise-level reliability and security."
+    ],
+    "color": ["bg-[#1E0D0D]", "bg-[#0D1E1E]", "bg-[#1E0D0D]", "bg-[#1E0D0D]"],
+    "iconBg": ["bg-red-500", "bg-emerald-500", "bg-red-500", "bg-red-500"],
+    "keyFeatures": [
+      [
+        "Advanced project tracking",
+        "Smart resource allocation",
+        "Operational governance",
+        "Strategic planning"
+      ],
+      [
+        "Task management",
+        "Workflow automation",
+        "Role-based access",
+        "Performance dashboards",
+        "KPI and SLA monitoring"
+      ],
+      [
+        "Fully custom design",
+        "National compliance",
+        "Legacy system integration",
+        "Dedicated support"
+      ],
+      [
+        "Azure hosting",
+        "Enterprise security",
+        "High reliability",
+        "Auto-scaling"
+      ]
+    ],
+    "container": {
+      "1": "Our Solutions",
+      "2": "Products & Digital Solutions",
+      "3": "Comprehensive digital products and solutions designed to meet complex enterprise and government requirements with full regulatory compliance.",
+      "4": "Key Features"
+    }
+  },
+  "CaseStudies": {
+    "title": [
+      "Cluster 2 Use Cases",
+      "DACO Use Case",
+      "Operation Management & Monitoring"
+    ],
+    "points": [
+      [
+        "Real-time operational visibility",
+        "Automated notifications",
+        "Performance reports",
+        "Digital service health checks"
+      ],
+      [
+        "Digital transformation support",
+        "Operational management workflows",
+        "Improved service delivery",
+        "Automated process tracking"
+      ],
+      [
+        "Real-time asset monitoring",
+        "Automated alerts",
+        "Integrated reporting system",
+        "Decision support"
+      ]
+    ],
+    "color": ["bg-[#1E0D0D]", "bg-[#0D1E1E]", "bg-[#1E0D0D]"],
+    "numberBg": ["bg-blue-600", "bg-blue-400", "bg-blue-600"],
+    "description": {
+      "1": "Use Cases",
+      "2": "Real-World Use Cases",
+      "3": "Proven implementations across government and enterprise sectors, delivering measurable improvements in operational efficiency and digital transformation.",
+      "4": "Featured Use Case",
+      "5": "Smart Operations Monitoring Platform",
+      "6": "Challenge",
+      "7": "Clients needed real-time visibility over operational assets with automated alerts.",
+      "8": "Solution",
+      "9": "Dynamic dashboards showing performance, utilization, and system health. Automated alerts triggered by thresholds.",
+      "10": "Outcomes",
+      "outcomes": {
+        "1": "40% faster issue detection",
+        "2": "Reduction in downtime",
+        "3": "Improved operational responsiveness"
+      },
+      "11": "Request More Scenarios"
+    }
+  },
+  "Clients": {
+    "clients1": {
+      "title": "Our Distinguished Clients",
+      "subtitle": "Trusted by government and enterprise leaders across the Kingdom.",
+      "list": [
+        {
+          "id": "mof",
+          "name": "Ministry of Finance",
+          "category": "Government",
+          "iconType": "government"
+        },
+        {
+          "id": "mofa",
+          "name": "Ministry of Foreign Affairs",
+          "category": "Government",
+          "iconType": "global"
+        },
+        {
+          "id": "srg",
+          "name": "Saudi Royal Guard",
+          "category": "Security",
+          "iconType": "security_alt"
+        },
+        {
+          "id": "mod",
+          "name": "Ministry of Defense",
+          "category": "Security",
+          "iconType": "security"
+        },
+        {
+          "id": "moi",
+          "name": "Ministry of Interior",
+          "category": "Security",
+          "iconType": "security_open"
+        },
+        {
+          "id": "gip",
+          "name": "General Intelligence Presidency",
+          "category": "Security",
+          "iconType": "intelligence"
+        },
+        {
+          "id": "sbg",
+          "name": "Saudi Binladin Group",
+          "category": "Enterprise",
+          "iconType": "construction"
+        },
+        {
+          "id": "oger",
+          "name": "Saudi Oger",
+          "category": "Enterprise",
+          "iconType": "enterprise"
+        },
+        {
+          "id": "spc",
+          "name": "Saudi Polyolefins",
+          "category": "Enterprise",
+          "iconType": "industrial"
+        }
+      ]
+    },
+    "clients2": {
+      "title": "Digital & Strategic Partners",
+      "subtitle": "Driving innovation through specialized digital implementations.",
+      "list": [
+        {
+          "id": "cluster2",
+          "name": "Cluster 2",
+          "category": "Digital",
+          "iconType": "sync"
+        },
+        {
+          "id": "daco",
+          "name": "DACO",
+          "category": "Digital",
+          "iconType": "briefcase"
+        },
+        {
+          "id": "elm",
+          "name": "Elm",
+          "category": "Digital",
+          "iconType": "tree"
+        },
+        {
+          "id": "arkan",
+          "name": "Arkan",
+          "category": "Digital",
+          "iconType": "government"
+        },
+        { "id": "rg", "name": "RG", "category": "Digital", "iconType": "bolt" },
+        {
+          "id": "enzar-co",
+          "name": "Enzar Company",
+          "category": "Internal",
+          "iconType": "settings"
+        }
+      ]
+    },
+    "description": [
+      "Our Clients",
+      "Trusted by leading government agencies, security organizations, and major enterprises across Saudi Arabia for mission-critical digital solutions.",
+      "Enzar Clients",
+      "Government, Security & Enterprise",
+      "Enzar Digital Clients",
+      "Digital Solutions & Technology Transformation",
+      "Trusted by Critical Sectors"
+    ],
+    "sectors": [
+      { "title": "Government", "subtitle": "6+ Ministries" },
+      { "title": "Security", "subtitle": "Critical Agencies" },
+      { "title": "Enterprise", "subtitle": "Major Corporations" }
+    ]
+  },
+  "Footer": {
+    "company": [
+      { "name": "About", "href": "/about" },
+      { "name": "Services", "href": "/services" },
+      { "name": "Culture", "href": "/culture" },
+      { "name": "Media", "href": "/media" },
+      { "name": "Careers", "href": "/career" }
+    ],
+    "services": [
+      { "name": "Digital Transformation", "href": "#" },
+      { "name": "Ventures", "href": "#" },
+      { "name": "Consulting", "href": "#" }
+    ],
+    "connect": [
+      { "name": "LinkedIn", "href": "#" },
+      { "name": "Behance", "href": "#" },
+      { "name": "Dribbble", "href": "#" }
+    ],
+    "description": [
+      "ENZAR",
+      "Digital",
+      "Enzar Digital is an experience studio crafting unified platforms that connect, inspire, and convert.",
+      ["Email", "info@enzar.com"],
+      ["Phone", "+966 11 4169057"],
+      ["Location", "Riyadh, Saudi Arabia"],
+      [
+        "Company",
+        "Services",
+        "Connect",
+        "Enzar Digital. All rights reserved.",
+        "Building the digital future together"
+      ]
+    ]
+  },
+  "About": {
+    "description": [
+      "About Enzar Digital",
+      "The Digital Excellence Center of Enzar Group",
+      "Who We Are",
+      "Enzar Digital is the digital transformation powerhouse of Enzar Group, combining over 20 years of security and operational expertise with cutting-edge technological innovation to deliver integrated digital solutions.",
+      "Why We Exist",
+      "Our mission is to empower organizations with advanced digital platforms that transform complex operations into seamless experiences. We believe in the power of technology to create lasting value and sustainable growth."
+    ]
+  },
+  "Services": {
+    "services": [
+      {
+        "title": [
+          "Digital Transformation",
+          "Venture Building",
+          "Business Consulting",
+          "Technology Consulting",
+          "Innovation & Strategy",
+          "Data & Analytics"
+        ],
+        "description": [
+          "Transform your operations with innovative digital solutions that increase efficiency and drive growth.",
+          "Launch digital products from zero to market with speed and efficiency.",
+          "Strategic guidance to align your business goals with the right technology solutions.",
+          "Deep expertise in modern technologies and the right tech stack selection.",
+          "Lead innovation through data-driven strategies and design thinking.",
+          "Turn data into actionable insights for better decision-making."
+        ],
+        "features": [
+          [
+            "Digital strategy development",
+            "Legacy system modernization",
+            "Cloud architecture",
+            "API integration"
+          ],
+          [
+            "Idea validation",
+            "MVP development",
+            "Go-to-market strategy",
+            "Product scaling"
+          ],
+          [
+            "Strategic planning",
+            "Process analysis",
+            "Business optimization",
+            "Change management"
+          ],
+          [
+            "Architecture review",
+            "Technology selection",
+            "Code review",
+            "Best practices"
+          ],
+          [
+            "Innovation workshops",
+            "Market research",
+            "Digital roadmap",
+            "Design thinking"
+          ],
+          [
+            "Data engineering",
+            "Business intelligence",
+            "Predictive analytics",
+            "Data visualization"
+          ]
+        ]
+      }
+    ],
+    "description": [
+      "Our Services",
+      "Comprehensive solutions to digitally transform your business and drive innovation",
+      "Ready to Start Your Project?",
+      "Let's discuss how we can help you achieve your digital goals",
+      "Contact Us"
+    ]
+  },
+  "Culture": {
+    "values": {
+      "title": [
+        "Passion & Excellence",
+        "Collaboration & Teamwork",
+        "Innovation & Creativity",
+        "Customer Focus",
+        "Quality & Professionalism",
+        "Diversity & Inclusion"
+      ],
+      "description": [
+        "We are passionate about what we do and strive for excellence in every project",
+        "We believe in the power of teamwork and collaboration to achieve exceptional results",
+        "We encourage creative thinking and continuous innovation in our solutions",
+        "We put our clients at the heart of everything we do and strive to exceed their expectations",
+        "We commit to the highest standards of quality and professionalism in all our work",
+        "We celebrate diversity and create an inclusive environment where everyone thrives"
+      ]
+    },
+    "stats": [
+      { "label": "Team Members", "value": "150+" },
+      { "label": "Countries", "value": "15+" },
+      { "label": "Women in Leadership", "value": "45%" },
+      { "label": "Employee Satisfaction", "value": "98%" }
+    ],
+    "description": [
+      "Our Culture",
+      "A workplace that inspires creativity, celebrates diversity, and drives innovation",
+      "Our Values",
+      "The principles that guide our work and shape our culture",
+      "Work Environment",
+      "We provide a flexible and stimulating work environment that encourages professional and personal development. We believe in work-life balance and offer opportunities for continuous learning and growth.",
+      "Careers Philosophy",
+      "We seek talented and passionate individuals who share our vision for innovation and excellence. We invest in our team and provide opportunities for growth and development in a supportive and stimulating environment.",
+      "Explore Careers"
+    ]
+  },
+  "Media": {
+    "newsItems": {
+      "category": ["Company News", "Partnership", "Award"],
+      "date": ["Jan 15, 2024", "Jan 10, 2024", "Jan 5, 2024"],
+      "title": [
+        "Enzar Digital Launches Innovative Logistics Platform",
+        "New Strategic Partnership with Industry Leaders",
+        "Awarded Best Digital Innovation"
+      ],
+      "description": [
+        "Announcing our new digital platform revolutionizing the logistics industry",
+        "Collaborating with leading partners to expand our digital services",
+        "International recognition for our innovative digital solutions in logistics"
+      ]
+    },
+    "insightItems": {
+      "type": ["Tech Insights", "Thought Leadership", "Case Study"],
+      "date": ["Jan 20, 2024", "Jan 18, 2024", "Jan 12, 2024"],
+      "readTime": ["5 min read", "8 min read", "10 min read"],
+      "title": [
+        "The Future of Digital Transformation in Logistics",
+        "Building Scalable Digital Platforms",
+        "Transforming Logistics Operations: A Success Story"
+      ],
+      "description": [
+        "Exploring the trends and technologies shaping the industry's future",
+        "Best practices and lessons learned from developing enterprise-grade solutions",
+        "How we helped a major client achieve 40% operational efficiency"
+      ]
+    },
+    "description": [
+      "Media",
+      "Latest news, insights, and updates from Enzar Digital",
+      ["News", "Insights"],
+      [
+        "Latest updates and announcements from the company",
+        "Thought leadership and in-depth articles from our experts"
+      ],
+      "Image Placeholder",
+      "Read More",
+      "Read Article"
+    ]
+  },
+  "Career": {
+    "perks": [
+      {
+        "title": "Competitive Salaries",
+        "description": "Competitive salary packages and performance bonuses"
+      },
+      {
+        "title": "Professional Growth",
+        "description": "Continuous training and professional development programs"
+      },
+      {
+        "title": "Flexible Work",
+        "description": "Flexible work options including remote work"
+      },
+      {
+        "title": "Health Insurance",
+        "description": "Comprehensive health insurance for you and your family"
+      },
+      {
+        "title": "Annual Leave",
+        "description": "Generous annual leave and sick leave"
+      },
+      {
+        "title": "Creative Environment",
+        "description": "Stimulating work environment that encourages creativity and innovation"
+      }
+    ],
+    "jobs": [
+      {
+        "title": "Senior Software Engineer",
+        "dept": "Engineering",
+        "location": "Riyadh, Saudi Arabia",
+        "type": "Full-time"
+      },
+      {
+        "title": "UI/UX Designer",
+        "dept": "Design",
+        "location": "Jeddah, Saudi Arabia",
+        "type": "Full-time"
+      },
+      {
+        "title": "Product Manager",
+        "dept": "Product",
+        "location": "Riyadh, Saudi Arabia",
+        "type": "Full-time"
+      },
+      {
+        "title": "DevOps Engineer",
+        "dept": "Infrastructure",
+        "location": "Remote",
+        "type": "Full-time"
+      },
+      {
+        "title": "Data Analyst",
+        "dept": "Data",
+        "location": "Dammam, Saudi Arabia",
+        "type": "Full-time"
+      },
+      {
+        "title": "Full Stack Developer",
+        "dept": "Engineering",
+        "location": "Riyadh, Saudi Arabia",
+        "type": "Full-time"
+      }
+    ],
+    "description": [
+      "Careers",
+      "Join our team and be part of our journey to transform the digital future",
+      ["Benefits & Perks", "Open Positions"],
+      [
+        "We care about our team and offer comprehensive benefits",
+        "Explore available opportunities and find the right role for you"
+      ],
+      "Looking for a passionate individual to join our",
+      "team and help build the future of digital solutions.",
+      "Apply Now"
+    ]
+  },
+  "Contact": {
+    "offices": [
+      {
+        "id": 1,
+        "city": "Head office",
+        "address": "Al-Sulimania, 25 Taha Hussain st., P. O. Box 9390, Riyadh 11413",
+        "phones": ["+966 11 4169057", "+966 11 4615735", "+966 11 4630853"],
+        "web": "www.enzar.com",
+        "email": "info@enzar.com",
+        "mapUrl": "#"
+      },
+      {
+        "id": 2,
+        "city": "Jeddah Office",
+        "address": "Al-Salama district, P. O. Box 14994, Jeddah 21434",
+        "phones": ["+966 11 4169057", "+966 11 4615735", "+966 11 4630853"],
+        "web": "www.enzar.com",
+        "email": "info@enzar.com",
+        "mapUrl": "#"
+      },
+      {
+        "id": 3,
+        "city": "Al Khobar Office",
+        "address": "Al Akrabia district, P. O. Box 21591, AL Khobar 31952",
+        "phones": ["+966 11 4169057", "+966 11 4615735", "+966 11 4630853"],
+        "web": "www.enzar.com",
+        "email": "info@enzar.com",
+        "mapUrl": "#"
+      }
+    ],
+    "description": [
+      "Contact Us",
+      "We're here to help. Reach out to us and we'll be happy to answer your questions",
+      "Here you will find all informations about our Branches.",
+      "Google Maps",
+      "Ready to start your project?",
+      "Get in touch with us today and let us transform your vision into stunning digital reality.",
+      "Start Conversation",
+      "Send Us a Message",
+      "Fill out the form below and we'll get back to you as soon as possible",
+      [
+        "First Name",
+        "Enter your first name",
+        "Last Name",
+        "Enter your last name",
+        "Email",
+        "Enter your email",
+        "Phone Number",
+        "Enter your phone number",
+        "Subject",
+        "What is your message about?",
+        "Message",
+        "Write your message here...",
+        "Send Message"
+      ],
+      "Subscribe to Our Newsletter",
+      "Get the latest news and updates delivered directly to your inbox",
+      "Subscribe"
+    ]
   }
 }

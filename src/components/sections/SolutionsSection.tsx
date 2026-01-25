@@ -1,70 +1,31 @@
 "use client";
-import React from "react";
 import { WobbleCard } from "../ui/wobble-card";
 import { FloatIn } from "../FloatIn";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
+import { Layers } from "lucide-react";
 
-const solutions = [
-  {
-    title: "Management & Planning Solutions",
-    description:
-      "Tools that streamline project tracking, planning, resource allocation, and operational governance—all customized for complex government and enterprise workflows.",
-    icon: "📊",
-    color: "bg-[#1E0D0D]", // Deep Red/Brown
-    iconBg: "bg-red-500",
-    keyFeatures: [
-      "Advanced project tracking",
-      "Smart resource allocation",
-      "Operational governance",
-      "Strategic planning",
-    ],
-  },
-  {
-    title: "Operational Management Tools",
-    description:
-      "Comprehensive suite of tools for task management, workflow automation, and performance monitoring.",
-    icon: "⚙️",
-    color: "bg-[#0D1E1E]", // Deep Teal
-    iconBg: "bg-emerald-500",
-    keyFeatures: [
-      "Task management",
-      "Workflow automation",
-      "Role-based access",
-      "Performance dashboards",
-      "KPI and SLA monitoring",
-    ],
-  },
-  {
-    title: "Custom Solutions",
-    description:
-      "Fully tailored digital products designed to meet specific client needs while ensuring full compliance with national regulations.",
-    icon: "🔧",
-    color: "bg-[#1E0D0D]",
-    iconBg: "bg-red-500",
-    keyFeatures: [
-      "Fully custom design",
-      "National compliance",
-      "Legacy system integration",
-      "Dedicated support",
-    ],
-  },
-  {
-    title: "Cloud-Based Platforms",
-    description:
-      "Solutions hosted and managed on our Azure infrastructure with enterprise-level reliability and security.",
-    icon: "☁️",
-    color: "bg-[#1E0D0D]",
-    iconBg: "bg-red-500",
-    keyFeatures: [
-      "Azure hosting",
-      "Enterprise security",
-      "High reliability",
-      "Auto-scaling",
-    ],
-  },
-];
+type Solutions = {
+  title: string[];
+  description: string[];
+  color: string[];
+  iconBg: string[];
+  keyFeatures: string[][];
+};
 
 export default function SolutionsSection() {
+  const t = useTranslations();
+  const data = t.raw("Solutions") as Solutions;
+
+  const solutions = data.title.map((item, index) => ({
+    title: item,
+    description: data.description[index],
+    icon: <Layers size={20} />,
+    color: data.color[index],
+    iconBg: data.iconBg[index],
+    keyFeatures: data.keyFeatures[index],
+  }));
+
   return (
     <section className="bg-black py-24 px-6">
       <div className="max-w-7xl mx-auto">
@@ -73,15 +34,13 @@ export default function SolutionsSection() {
           <FloatIn direction="none">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-red-500/30 bg-red-500/10 text-red-500 text-xs font-medium uppercase tracking-widest">
               <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
-              Our Solutions
+              {t("Solutions.container.1")}
             </div>
             <h2 className="text-5xl md:text-7xl font-bold text-white mt-4">
-              Products & Digital Solutions
+              {t("Solutions.container.2")}
             </h2>
             <p className="text-neutral-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mt-6">
-              Comprehensive digital products and solutions designed to meet
-              complex enterprise and government requirements with full
-              regulatory compliance.
+              {t("Solutions.container.3")}
             </p>
           </FloatIn>
         </div>
@@ -120,7 +79,7 @@ export default function SolutionsSection() {
                   {/* Key Features List */}
                   <div className="space-y-4">
                     <p className="text-neutral-500 text-xs font-bold uppercase tracking-widest">
-                      Key Features
+                      {t("Solutions.container.4")}
                     </p>
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {item.keyFeatures.map((feature, fIdx) => (

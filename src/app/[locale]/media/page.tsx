@@ -1,66 +1,47 @@
 "use client";
 import React from "react";
 import { cn } from "@/lib/utils";
-import { ArrowUpRight, Calendar, Clock } from "lucide-react";
+import { ArrowUpRight, Calendar, Clock, Dot } from "lucide-react";
 import Link from "next/link";
 import { FloatIn } from "@/components/FloatIn";
 import Footer from "@/components/Footer";
+import { useTranslations } from "next-intl";
 
-const newsItems = [
-  {
-    category: "Company News",
-    date: "Jan 15, 2024",
-    title: "Enzar Digital Launches Innovative Logistics Platform",
-    description:
-      "Announcing our new digital platform revolutionizing the logistics industry",
-    // image: "/api/placeholder/400/250",
-  },
-  {
-    category: "Partnership",
-    date: "Jan 10, 2024",
-    title: "New Strategic Partnership with Industry Leaders",
-    description:
-      "Collaborating with leading partners to expand our digital services",
-    // image: "/api/placeholder/400/250",
-  },
-  {
-    category: "Award",
-    date: "Jan 5, 2024",
-    title: "Awarded Best Digital Innovation",
-    description:
-      "International recognition for our innovative digital solutions in logistics",
-    // image: "/api/placeholder/400/250",
-  },
-];
+type NewsItems = {
+  category: string[];
+  date: string[];
+  title: string[];
+  description: string[];
+};
 
-const insightItems = [
-  {
-    type: "Tech Insights",
-    date: "Jan 20, 2024",
-    readTime: "5 min read",
-    title: "The Future of Digital Transformation in Logistics",
-    description:
-      "Exploring the trends and technologies shaping the industry's future",
-  },
-  {
-    type: "Thought Leadership",
-    date: "Jan 18, 2024",
-    readTime: "8 min read",
-    title: "Building Scalable Digital Platforms",
-    description:
-      "Best practices and lessons learned from developing enterprise-grade solutions",
-  },
-  {
-    type: "Case Study",
-    date: "Jan 12, 2024",
-    readTime: "10 min read",
-    title: "Transforming Logistics Operations: A Success Story",
-    description:
-      "How we helped a major client achieve 40% operational efficiency",
-  },
-];
+type InsightItems = {
+  type: string[];
+  date: string[];
+  readTime: string[];
+  title: string[];
+  description: string[];
+};
 
 export default function Media() {
+  const t = useTranslations("Media");
+
+  const data = t.raw("newsItems") as NewsItems;
+  const newsItems = data.title.map((title: any, index: any) => ({
+    category: data.category[index],
+    date: data.date[index],
+    title: title,
+    description: data.description[index],
+  }));
+
+  const insightData = t.raw("insightItems") as InsightItems;
+  const insightItems = insightData.title.map((title: any, index: any) => ({
+    type: insightData.type[index],
+    date: insightData.date[index],
+    readTime: insightData.readTime[index],
+    title: title,
+    description: insightData.description[index],
+  }));
+
   return (
     <>
       {/* HERO SECTION */}
@@ -69,10 +50,10 @@ export default function Media() {
           <div className="text-center mb-24">
             <FloatIn direction="up">
               <h1 className="text-5xl md:text-8xl font-bold text-white mb-6">
-                Media
+                {t("description.0")}
               </h1>
               <p className="text-neutral-400 text-lg md:text-xl tracking-widest uppercase font-medium">
-                Latest news, insights, and updates from Enzar Digital
+                {t("description.1")}
               </p>
             </FloatIn>
           </div>
@@ -86,10 +67,10 @@ export default function Media() {
           <div className="mb-24">
             <div className="mb-12">
               <FloatIn direction="up">
-                <h2 className="text-5xl font-bold text-white mb-4">News</h2>
-                <p className="text-neutral-500">
-                  Latest updates and announcements from the company
-                </p>
+                <h2 className="text-5xl font-bold text-white mb-4">
+                  {t("description.2.0")}
+                </h2>
+                <p className="text-neutral-500">{t("description.3.0")}</p>
               </FloatIn>
             </div>
 
@@ -103,14 +84,16 @@ export default function Media() {
                         alt={item.title}
                         className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500 opacity-60 group-hover:opacity-100"
                       /> */}
-                      Image Placeholder
+                      {t("description.4")}
                     </div>
                     <div className="p-8 space-y-4">
                       <div className="flex items-center gap-3 text-[10px] uppercase tracking-widest">
                         <span className="text-red-500 font-bold">
                           {item.category}
                         </span>
-                        <span className="text-neutral-600">•</span>
+                        <span className="text-neutral-600">
+                          <Dot />
+                        </span>
                         <span className="text-neutral-400">{item.date}</span>
                       </div>
                       <h3 className="text-xl font-bold text-white leading-tight group-hover:text-red-500 transition-colors">
@@ -123,7 +106,7 @@ export default function Media() {
                         href="#"
                         className="inline-flex items-center gap-2 text-xs font-bold text-red-500 pt-2 group/link"
                       >
-                        Read More{" "}
+                        {t("description.5")}{" "}
                         <ArrowUpRight
                           size={14}
                           className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform"
@@ -140,10 +123,10 @@ export default function Media() {
           <div>
             <div className="mb-12">
               <FloatIn direction="up">
-                <h2 className="text-5xl font-bold text-white mb-4">Insights</h2>
-                <p className="text-neutral-500">
-                  Thought leadership and in-depth articles from our experts
-                </p>
+                <h2 className="text-5xl font-bold text-white mb-4">
+                  {t("description.2.1")}
+                </h2>
+                <p className="text-neutral-500">{t("description.3.1")}</p>
               </FloatIn>
             </div>
 
@@ -158,11 +141,15 @@ export default function Media() {
                     <div className="space-y-3 max-w-2xl">
                       <div className="flex items-center gap-4 text-[10px] uppercase tracking-widest font-bold">
                         <span className="text-red-500">{item.type}</span>
-                        <span className="text-neutral-600">•</span>
+                        <span className="text-neutral-600">
+                          <Dot />
+                        </span>
                         <div className="flex items-center gap-1.5 text-neutral-400">
                           <Calendar size={12} /> {item.date}
                         </div>
-                        <span className="text-neutral-600">•</span>
+                        <span className="text-neutral-600">
+                          <Dot />
+                        </span>
                         <div className="flex items-center gap-1.5 text-neutral-400">
                           <Clock size={12} /> {item.readTime}
                         </div>
@@ -179,7 +166,7 @@ export default function Media() {
                       href="#"
                       className="shrink-0 flex items-center gap-2 text-xs font-bold text-white border border-white/10 px-6 py-3 rounded-full hover:bg-white/5 transition-all"
                     >
-                      Read Article <ArrowUpRight size={14} />
+                      {t("description.6")} <ArrowUpRight size={14} />
                     </Link>
                   </div>
                 </FloatIn>

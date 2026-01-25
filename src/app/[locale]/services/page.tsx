@@ -1,7 +1,5 @@
 "use client";
-import React from "react";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
 import { FloatIn } from "@/components/FloatIn";
 import {
   TrendingUp,
@@ -12,83 +10,35 @@ import {
   Database,
 } from "lucide-react";
 import Footer from "@/components/Footer";
+import { useTranslations } from "next-intl";
+import Link from "next/link";
 
-const services = [
-  {
-    title: "Digital Transformation",
-    description:
-      "Transform your operations with innovative digital solutions that increase efficiency and drive growth.",
-    icon: <TrendingUp className="w-6 h-6 text-red-600" />,
-    features: [
-      "Digital strategy development",
-      "Legacy system modernization",
-      "Cloud architecture",
-      "API integration",
-    ],
-  },
-  {
-    title: "Venture Building",
-    description:
-      "Launch digital products from zero to market with speed and efficiency.",
-    icon: <Rocket className="w-6 h-6 text-red-600" />,
-    features: [
-      "Idea validation",
-      "MVP development",
-      "Go-to-market strategy",
-      "Product scaling",
-    ],
-  },
-  {
-    title: "Business Consulting",
-    description:
-      "Strategic guidance to align your business goals with the right technology solutions.",
-    icon: <Target className="w-6 h-6 text-red-600" />,
-    features: [
-      "Strategic planning",
-      "Process analysis",
-      "Business optimization",
-      "Change management",
-    ],
-  },
-  {
-    title: "Technology Consulting",
-    description:
-      "Deep expertise in modern technologies and the right tech stack selection.",
-    icon: <Code2 className="w-6 h-6 text-red-600" />,
-    features: [
-      "Architecture review",
-      "Technology selection",
-      "Code review",
-      "Best practices",
-    ],
-  },
-  {
-    title: "Innovation & Strategy",
-    description:
-      "Lead innovation through data-driven strategies and design thinking.",
-    icon: <Lightbulb className="w-6 h-6 text-red-600" />,
-    features: [
-      "Innovation workshops",
-      "Market research",
-      "Digital roadmap",
-      "Design thinking",
-    ],
-  },
-  {
-    title: "Data & Analytics",
-    description:
-      "Turn data into actionable insights for better decision-making.",
-    icon: <Database className="w-6 h-6 text-red-600" />,
-    features: [
-      "Data engineering",
-      "Business intelligence",
-      "Predictive analytics",
-      "Data visualization",
-    ],
-  },
+const icons = [
+  <TrendingUp className="w-6 h-6 text-red-600" />,
+  <Rocket className="w-6 h-6 text-red-600" />,
+  <Target className="w-6 h-6 text-red-600" />,
+  <Code2 className="w-6 h-6 text-red-600" />,
+  <Lightbulb className="w-6 h-6 text-red-600" />,
+  <Database className="w-6 h-6 text-red-600" />,
 ];
 
+type Services = {
+  title: string[];
+  description: string[];
+  features: string[][];
+};
+
 export default function Services() {
+  const t = useTranslations("Services");
+  const rawData = t.raw("services") as Services[];
+  const data = rawData[0];
+  const services = data.title.map((title, index) => ({
+    title: title,
+    description: data.description[index],
+    features: data.features[index],
+    icon: icons[index],
+  }));
+
   return (
     <>
       <section className="bg-black py-24 px-6 pt-32">
@@ -97,11 +47,10 @@ export default function Services() {
           <div className="text-center mb-24">
             <FloatIn direction="up">
               <h1 className="text-5xl md:text-8xl font-bold text-white mb-6">
-                Our Services
+                {t("description.0")}
               </h1>
               <p className="text-neutral-400 text-lg md:text-xl tracking-widest uppercase font-medium">
-                Comprehensive solutions to digitally transform your business and
-                drive innovation
+                {t("description.1")}
               </p>
             </FloatIn>
           </div>
@@ -153,13 +102,13 @@ export default function Services() {
           {/* BOTTOM CTA SECTION */}
           <div className="text-center space-y-8">
             <h2 className="text-4xl lg:text-5xl font-bold text-white tracking-tight">
-              Ready to Start Your Project?
+              {t("description.2")}
             </h2>
             <p className="text-neutral-400 max-w-xl mx-auto">
-              Let's discuss how we can help you achieve your digital goals
+              {t("description.3")}
             </p>
             <button className="relative group overflow-hidden bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-full font-bold transition-all shadow-[0_0_30px_rgba(220,38,38,0.3)] hover:shadow-[0_0_50px_rgba(220,38,38,0.5)]">
-              Contact Us
+              <Link href={"/contact"}>{t("description.4")}</Link>
             </button>
           </div>
         </div>
