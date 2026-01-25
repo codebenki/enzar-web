@@ -1,27 +1,34 @@
 "use client";
-import React from "react";
 import Link from "next/link";
-import { Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Twitter,
+  Copyright,
+} from "lucide-react";
+import { useTranslations } from "next-intl";
+
+type FooterLinkItem = {
+  name: string;
+  href: string;
+};
+
+type FooterStructure = {
+  company: FooterLinkItem[];
+  services: FooterLinkItem[];
+  connect: FooterLinkItem[];
+};
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const t = useTranslations();
 
-  const footerLinks = {
-    company: [
-      { name: "About", href: "/about" },
-      { name: "Careers", href: "#" },
-      { name: "Culture", href: "#" },
-    ],
-    services: [
-      { name: "Digital Transformation", href: "#" },
-      { name: "Ventures", href: "#" },
-      { name: "Consulting", href: "#" },
-    ],
-    connect: [
-      { name: "LinkedIn", href: "#" },
-      { name: "Behance", href: "#" },
-      { name: "Dribbble", href: "#" },
-    ],
+  const footerLinks = (t.raw("Footer") as FooterStructure) || {
+    company: [],
+    services: [],
+    connect: [],
   };
 
   return (
@@ -31,15 +38,16 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="md:col-span-5 space-y-8">
             <div className="space-y-2">
-              <h2 className="text-2xl font-bold tracking-tighter">ENZAR</h2>
+              <h2 className="text-2xl font-bold tracking-tighter">
+                {t("Footer.description.0")}
+              </h2>
               <p className="text-xs tracking-[0.3em] text-neutral-500 uppercase">
-                Digital
+                {t("Footer.description.1")}
               </p>
             </div>
 
             <p className="text-xl md:text-2xl font-medium leading-relaxed max-w-sm">
-              Enzar Digital is an experience studio crafting unified platforms
-              that connect, inspire, and convert.
+              {t("Footer.description.2")}
             </p>
 
             {/* Contact Info */}
@@ -48,13 +56,13 @@ export default function Footer() {
                 <Mail className="w-5 h-5 text-red-500 shrink-0 mt-1" />
                 <div>
                   <p className="text-[10px] uppercase tracking-widest text-neutral-500 mb-1">
-                    Email
+                    {t("Footer.description.3.0")}
                   </p>
                   <a
                     href="mailto:info@enzar.com"
                     className="hover:text-red-500 transition-colors"
                   >
-                    info@enzar.com
+                    {t("Footer.description.3.1")}
                   </a>
                 </div>
               </div>
@@ -63,13 +71,13 @@ export default function Footer() {
                 <Phone className="w-5 h-5 text-red-500 shrink-0 mt-1" />
                 <div>
                   <p className="text-[10px] uppercase tracking-widest text-neutral-500 mb-1">
-                    Phone
+                    {t("Footer.description.4.0")}
                   </p>
                   <a
                     href="tel:+966114169057"
                     className="hover:text-red-500 transition-colors"
                   >
-                    +966 11 4169057
+                    {t("Footer.description.4.1")}
                   </a>
                 </div>
               </div>
@@ -78,14 +86,13 @@ export default function Footer() {
                 <MapPin className="w-5 h-5 text-red-500 shrink-0 mt-1" />
                 <div>
                   <p className="text-[10px] uppercase tracking-widest text-neutral-500 mb-1">
-                    Location
+                    {t("Footer.description.5.0")}
                   </p>
-                  <p>Riyadh, Saudi Arabia</p>
+                  <p>{t("Footer.description.5.1")}</p>
                 </div>
               </div>
             </div>
 
-            {/* Social Icons */}
             <div className="flex gap-4 pt-4">
               <a
                 href="#"
@@ -104,13 +111,14 @@ export default function Footer() {
 
           {/* Links Columns */}
           <div className="md:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-8">
+            {/* 4. Use the specific categories from the retrieved object */}
             <div>
               <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-500 mb-8">
-                Company
+                {t("Footer.description.6.0")}
               </h4>
               <ul className="space-y-4">
-                {footerLinks.company.map((link) => (
-                  <li key={link.name}>
+                {footerLinks.company.map((link, idx) => (
+                  <li key={`${link.name}-${idx}`}>
                     <Link
                       href={link.href}
                       className="text-neutral-400 hover:text-white transition-colors"
@@ -124,11 +132,11 @@ export default function Footer() {
 
             <div>
               <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-500 mb-8">
-                Services
+                {t("Footer.description.6.1")}
               </h4>
               <ul className="space-y-4">
-                {footerLinks.services.map((link) => (
-                  <li key={link.name}>
+                {footerLinks.services.map((link, idx) => (
+                  <li key={`${link.name}-${idx}`}>
                     <Link
                       href={link.href}
                       className="text-neutral-400 hover:text-white transition-colors"
@@ -142,11 +150,11 @@ export default function Footer() {
 
             <div>
               <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-500 mb-8">
-                Connect
+                {t("Footer.description.6.2")}
               </h4>
               <ul className="space-y-4">
-                {footerLinks.connect.map((link) => (
-                  <li key={link.name}>
+                {footerLinks.connect.map((link, idx) => (
+                  <li key={`${link.name}-${idx}`}>
                     <Link
                       href={link.href}
                       className="text-neutral-400 hover:text-white transition-colors"
@@ -162,8 +170,10 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] md:text-xs text-neutral-500 uppercase tracking-widest">
-          <p>© {currentYear} Enzar Digital. All rights reserved.</p>
-          <p>Building the digital future together</p>
+          <p className="flex gap-2">
+            <Copyright size={16} /> {t("Footer.description.6.3")}
+          </p>
+          <p>{t("Footer.description.6.4")}</p>
         </div>
       </div>
     </footer>

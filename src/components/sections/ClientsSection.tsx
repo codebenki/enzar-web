@@ -1,84 +1,46 @@
 "use client";
+import { useTranslations } from "next-intl";
 import { FloatIn } from "../FloatIn";
 import { cn } from "@/lib/utils";
+import { Building, Building2, Computer, Laptop } from "lucide-react";
 
-const enzarClients = [
-  {
-    name: "Ministry of Finance",
-    category: "Government",
-    icon: "🏛️",
-    color: "bg-red-900/40",
-  },
-  {
-    name: "Ministry of Foreign Affairs",
-    category: "Government",
-    icon: "🌐",
-    color: "bg-red-900/40",
-  },
-  {
-    name: "Saudi Royal Guard",
-    category: "Security",
-    icon: "🏰",
-    color: "bg-red-900/40",
-  },
-  {
-    name: "Ministry of Defense",
-    category: "Security",
-    icon: "🛡️",
-    color: "bg-red-900/40",
-  },
-  {
-    name: "Ministry of Interior",
-    category: "Security",
-    icon: "🔓",
-    color: "bg-red-900/40",
-  },
-  {
-    name: "General Intelligence Presidency",
-    category: "Security",
-    icon: "🕵️",
-    color: "bg-red-900/40",
-  },
-  {
-    name: "Saudi Binladin Group",
-    category: "Enterprise",
-    icon: "🏗️",
-    color: "bg-emerald-900/40",
-  },
-  {
-    name: "Saudi Oger",
-    category: "Enterprise",
-    icon: "🏢",
-    color: "bg-emerald-900/40",
-  },
-  {
-    name: "Saudi Polyolefins",
-    category: "Enterprise",
-    icon: "🧪",
-    color: "bg-emerald-900/40",
-  },
-];
+type ClientsItem = {
+  id: string;
+  name: string;
+  category: string;
+};
+type ClientBlock = {
+  title: string;
+  subtitle: string;
+  list: ClientsItem[];
+};
 
-const digitalClients = [
-  {
-    name: "Cluster 2",
-    category: "Digital",
-    icon: "🔄",
-    color: "bg-red-900/40",
-  },
-  { name: "DACO", category: "Digital", icon: "💼", color: "bg-red-900/40" },
-  { name: "Elm", category: "Digital", icon: "🌳", color: "bg-red-900/40" },
-  { name: "Arkan", category: "Digital", icon: "🏛️", color: "bg-red-900/40" },
-  { name: "RG", category: "Digital", icon: "⚡", color: "bg-red-900/40" },
-  {
-    name: "Enzar Company",
-    category: "Internal",
-    icon: "🔧",
-    color: "bg-red-900/40",
-  },
-];
+const enterprise = {
+  1: <Building size={20} color="darkred" />,
+  2: <Building2 size={20} color="red" />,
+};
+const digital = {
+  1: <Computer size={20} color="red" />,
+  2: <Laptop size={20} color="darkred" />,
+};
 
 export default function ClientsSection() {
+  const t = useTranslations();
+  const data = t.raw("Clients.clients1.list") as ClientsItem[];
+  const enzarClients = data.map((item, index) => ({
+    id: item.id,
+    name: item.name,
+    category: item.category,
+    icon: index % 2 === 0 ? enterprise[1] : enterprise[2],
+  }));
+  const digitalData = t.raw("Clients.clients2.list") as ClientsItem[];
+  const digitalClients = digitalData.map((item, index) => ({
+    id: item.id,
+    name: item.name,
+    category: item.category,
+    icon: index % 2 === 0 ? digital[1] : digital[2],
+  }));
+
   return (
     <section className="bg-black py-24 px-6">
       <div className="max-w-7xl mx-auto">
@@ -87,15 +49,13 @@ export default function ClientsSection() {
           <FloatIn direction="none">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-red-500/30 bg-red-500/10 text-red-500 text-xs font-medium uppercase tracking-widest">
               <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
-              Our Clients
+              {t("Clients.description.0")}
             </div>
             <h2 className="text-5xl md:text-7xl font-bold text-white mt-4">
-              Our Clients
+              {t("Clients.description.0")}
             </h2>
             <p className="text-neutral-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mt-6">
-              Trusted by leading government agencies, security organizations,
-              and major enterprises across Saudi Arabia for mission-critical
-              digital solutions.
+              {t("Clients.description.1")}
             </p>
           </FloatIn>
         </div>
@@ -103,9 +63,11 @@ export default function ClientsSection() {
         {/* Category 1: Enzar Clients */}
         <div className="mb-20">
           <div className="text-center mb-10">
-            <h3 className="text-2xl font-bold text-white">Enzar Clients</h3>
+            <h3 className="text-2xl font-bold text-white">
+              {t("Clients.description.2")}
+            </h3>
             <p className="text-neutral-500 text-sm">
-              Government, Security & Enterprise
+              {t("Clients.description.3")}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -119,10 +81,10 @@ export default function ClientsSection() {
         <div className="mb-20">
           <div className="text-center mb-10">
             <h3 className="text-2xl font-bold text-white">
-              Enzar Digital Clients
+              {t("Clients.description.4")}
             </h3>
             <p className="text-neutral-500 text-sm">
-              Digital Solutions & Technology Transformation
+              {t("Clients.description.5")}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -136,23 +98,23 @@ export default function ClientsSection() {
         <FloatIn direction="up">
           <div className="rounded-[40px] bg-[#0A0505] border border-white/5 p-10 md:p-12 text-center">
             <h4 className="text-white text-xl font-bold mb-8">
-              Trusted by Critical Sectors
+              {t("Clients.description.6")}
             </h4>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <SectorStat
                 icon="🏛️"
-                title="Government"
-                subtitle="6+ Ministries"
+                title={t("Clients.sectors.0.title")}
+                subtitle={t("Clients.sectors.0.subtitle")}
               />
               <SectorStat
                 icon="🔐"
-                title="Security"
-                subtitle="Critical Agencies"
+                title={t("Clients.sectors.1.title")}
+                subtitle={t("Clients.sectors.1.subtitle")}
               />
               <SectorStat
                 icon="🏢"
-                title="Enterprise"
-                subtitle="Major Corporations"
+                title={t("Clients.sectors.2.title")}
+                subtitle={t("Clients.sectors.2.subtitle")}
               />
             </div>
           </div>

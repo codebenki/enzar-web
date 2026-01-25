@@ -150,10 +150,7 @@
       ]
     },
     "standards": [
-      {
-        "abbr": "NCA",
-        "name": "National Cybersecurity Authority"
-      },
+      { "abbr": "NCA", "name": "National Cybersecurity Authority" },
       {
         "abbr": "CITC",
         "name": "Communications & Information Technology Commission"
@@ -219,5 +216,199 @@
       "3": "Comprehensive digital products and solutions designed to meet complex enterprise and government requirements with full regulatory compliance.",
       "4": "Key Features"
     }
+  },
+  "CaseStudies": {
+    "title": [
+      "Cluster 2 Use Cases",
+      "DACO Use Case",
+      "Operation Management & Monitoring"
+    ],
+    "points": [
+      [
+        "Real-time operational visibility",
+        "Automated notifications",
+        "Performance reports",
+        "Digital service health checks"
+      ],
+      [
+        "Digital transformation support",
+        "Operational management workflows",
+        "Improved service delivery",
+        "Automated process tracking"
+      ],
+      [
+        "Real-time asset monitoring",
+        "Automated alerts",
+        "Integrated reporting system",
+        "Decision support"
+      ]
+    ],
+    "color": ["bg-[#1E0D0D]", "bg-[#0D1E1E]", "bg-[#1E0D0D]"],
+    "numberBg": ["bg-blue-600", "bg-blue-400", "bg-blue-600"],
+    "description": {
+      "1": "Use Cases",
+      "2": "Real-World Use Cases",
+      "3": "Proven implementations across government and enterprise sectors, delivering measurable improvements in operational efficiency and digital transformation.",
+      "4": "Featured Use Case",
+      "5": "Smart Operations Monitoring Platform",
+      "6": "Challenge",
+      "7": "Clients needed real-time visibility over operational assets with automated alerts.",
+      "8": "Solution",
+      "9": "Dynamic dashboards showing performance, utilization, and system health. Automated alerts triggered by thresholds.",
+      "10": "Outcomes",
+      "outcomes": {
+        "1": "40% faster issue detection",
+        "2": "Reduction in downtime",
+        "3": "Improved operational responsiveness"
+      },
+      "11": "Request More Scenarios"
+    }
+  },
+  "Clients": {
+    "clients1": {
+      "title": "Our Distinguished Clients",
+      "subtitle": "Trusted by government and enterprise leaders across the Kingdom.",
+      "list": [
+        {
+          "id": "mof",
+          "name": "Ministry of Finance",
+          "category": "Government",
+          "iconType": "government"
+        },
+        {
+          "id": "mofa",
+          "name": "Ministry of Foreign Affairs",
+          "category": "Government",
+          "iconType": "global"
+        },
+        {
+          "id": "srg",
+          "name": "Saudi Royal Guard",
+          "category": "Security",
+          "iconType": "security_alt"
+        },
+        {
+          "id": "mod",
+          "name": "Ministry of Defense",
+          "category": "Security",
+          "iconType": "security"
+        },
+        {
+          "id": "moi",
+          "name": "Ministry of Interior",
+          "category": "Security",
+          "iconType": "security_open"
+        },
+        {
+          "id": "gip",
+          "name": "General Intelligence Presidency",
+          "category": "Security",
+          "iconType": "intelligence"
+        },
+        {
+          "id": "sbg",
+          "name": "Saudi Binladin Group",
+          "category": "Enterprise",
+          "iconType": "construction"
+        },
+        {
+          "id": "oger",
+          "name": "Saudi Oger",
+          "category": "Enterprise",
+          "iconType": "enterprise"
+        },
+        {
+          "id": "spc",
+          "name": "Saudi Polyolefins",
+          "category": "Enterprise",
+          "iconType": "industrial"
+        }
+      ]
+    },
+    "clients2": {
+      "title": "Digital & Strategic Partners",
+      "subtitle": "Driving innovation through specialized digital implementations.",
+      "list": [
+        {
+          "id": "cluster2",
+          "name": "Cluster 2",
+          "category": "Digital",
+          "iconType": "sync"
+        },
+        {
+          "id": "daco",
+          "name": "DACO",
+          "category": "Digital",
+          "iconType": "briefcase"
+        },
+        {
+          "id": "elm",
+          "name": "Elm",
+          "category": "Digital",
+          "iconType": "tree"
+        },
+        {
+          "id": "arkan",
+          "name": "Arkan",
+          "category": "Digital",
+          "iconType": "government"
+        },
+        { "id": "rg", "name": "RG", "category": "Digital", "iconType": "bolt" },
+        {
+          "id": "enzar-co",
+          "name": "Enzar Company",
+          "category": "Internal",
+          "iconType": "settings"
+        }
+      ]
+    },
+    "description": [
+      "Our Clients",
+      "Trusted by leading government agencies, security organizations, and major enterprises across Saudi Arabia for mission-critical digital solutions.",
+      "Enzar Clients",
+      "Government, Security & Enterprise",
+      "Enzar Digital Clients",
+      "Digital Solutions & Technology Transformation",
+      "Trusted by Critical Sectors"
+    ],
+    "sectors": [
+      { "title": "Government", "subtitle": "6+ Ministries" },
+      { "title": "Security", "subtitle": "Critical Agencies" },
+      { "title": "Enterprise", "subtitle": "Major Corporations" }
+    ]
+  },
+  "Footer": {
+    "company": [
+      { "name": "About", "href": "/about" },
+      { "name": "Services", "href": "/services" },
+      { "name": "Culture", "href": "/culture" },
+      { "name": "Media", "href": "/media" },
+      { "name": "Careers", "href": "/career" }
+    ],
+    "services": [
+      { "name": "Digital Transformation", "href": "#" },
+      { "name": "Ventures", "href": "#" },
+      { "name": "Consulting", "href": "#" }
+    ],
+    "connect": [
+      { "name": "LinkedIn", "href": "#" },
+      { "name": "Behance", "href": "#" },
+      { "name": "Dribbble", "href": "#" }
+    ],
+    "description": [
+      "ENZAR",
+      "Digital",
+      "Enzar Digital is an experience studio crafting unified platforms that connect, inspire, and convert.",
+      ["Email", "info@enzar.com"],
+      ["Phone", "+966 11 4169057"],
+      ["Location", "Riyadh, Saudi Arabia"],
+      [
+        "Company",
+        "Services",
+        "Connect",
+        "Enzar Digital. All rights reserved.",
+        "Building the digital future together"
+      ]
+    ]
   }
 }
