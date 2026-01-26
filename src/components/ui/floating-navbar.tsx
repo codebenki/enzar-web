@@ -8,10 +8,9 @@ import {
 } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { useParams } from "next/navigation"; // Hook to detect current route
 import { Menu, X } from "lucide-react";
 import { useRouter, usePathname } from "@/i18n/routing";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export const FloatingNav = ({
   navItems,
@@ -49,12 +48,13 @@ export const FloatingNav = ({
 
   const router = useRouter();
   const locale = useLocale();
-  const params = useParams();
 
   const toggleLocale = () => {
     const nextLocale = locale === "en" ? "ar" : "en";
     router.replace(pathname, { locale: nextLocale });
   };
+
+  const t = useTranslations("Navbar");
 
   return (
     <AnimatePresence mode="wait">
@@ -127,7 +127,7 @@ export const FloatingNav = ({
             <button className="relative group shrink-0">
               <div className="absolute inset-0 bg-red-600 rounded-full blur-md opacity-20 group-hover:opacity-50 transition-opacity" />
               <div className="relative bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-full text-xs font-bold transition-all active:scale-95">
-                <Link href={"/en/contact"}>Let&apos;s Talk</Link>
+                <Link href={"/contact"}>{t("letsTalk")}</Link>
               </div>
             </button>
 

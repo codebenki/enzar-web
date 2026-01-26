@@ -6,7 +6,8 @@
     "culture": "Culture",
     "media": "Media",
     "careers": "Careers",
-    "contact": "Contact Us"
+    "contact": "Contact Us",
+    "letsTalk": "Let's Talk"
   },
   "Banner": {
     "banner1": "UNIFIED DIGITAL EXPERIENCES",
@@ -523,7 +524,15 @@
       "Careers Philosophy",
       "We seek talented and passionate individuals who share our vision for innovation and excellence. We invest in our team and provide opportunities for growth and development in a supportive and stimulating environment.",
       "Explore Careers"
-    ]
+    ],
+    "culture": {
+      "footerSplit": [
+        "Flexible work (office & remote)",
+        "Professional development programs",
+        "Health and wellness initiatives",
+        "Team building events"
+      ]
+    }
   },
   "Media": {
     "newsItems": {

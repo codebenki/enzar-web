@@ -36,6 +36,9 @@ export default function Culture() {
   const dataStats = t.raw("stats") as Stats[];
   const stats = Array.isArray(dataStats) ? dataStats : [];
 
+  const dataFooterSplit = t.raw("culture.footerSplit");
+  const footerSplit = Array.isArray(dataFooterSplit) ? dataFooterSplit : [];
+
   return (
     <>
       <section className="bg-black py-24 px-6 pt-32">
@@ -115,12 +118,9 @@ export default function Culture() {
                     {t("description.5")}
                   </p>
                   <ul className="space-y-3">
-                    {[
-                      "Flexible work (office & remote)",
-                      "Professional development programs",
-                      "Health and wellness initiatives",
-                      "Team building events",
-                    ].map((bullet, i) => (
+                    {/* make arabic support */}
+                    {/* lets talk button redirect to contact us */}
+                    {footerSplit.map((bullet: any, i: any) => (
                       <li
                         key={i}
                         className="flex items-center gap-3 text-sm text-neutral-400"
